@@ -32,7 +32,7 @@
         font-family: "Poppins", sans-serif;
         border: solid 2px #ec455b00;
         &:focus {
-          border: solid 2px #ec455b79;
+          border: solid 2px $third-color;
           transition: all 0.3s ease-in-out;
         }
         &::placeholder {

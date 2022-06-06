@@ -95,7 +95,7 @@
                 transition: all 200ms ease-out;
               }
               &:focus {
-                border: 2px solid #ec455b8c;
+                border: 2px solid $third-color;
                 transition: all 200ms ease-in;
               }
             }
@@ -140,7 +140,7 @@
             background-color: #e4e3e3b8;
             transition: all 200ms ease-out;
             &:focus {
-              border: 2px solid #ec455b8c;
+              border: 2px solid $third-color;
               transition: all 200ms ease-in;
             }
           }
@@ -154,7 +154,7 @@
             margin-top: 20px;
             padding: 7px;
             &:focus {
-              border: 2px solid #ec455b8c;
+              border: 2px solid $third-color;
               transition: all 200ms ease-in;
             }
           }

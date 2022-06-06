@@ -51,7 +51,7 @@
                             <td></td>
                             <td></td>
                             <td style=" white-space: nowrap"><b>Tổng cộng: </b></td>
-                            <td style="color:#ec455a; font-weight:bold; font-size:18px"><?= currency_format($item['TongTien']) ?></td>
+                            <td style="color:#666666; font-weight:bold; font-size:18px"><?= currency_format($item['TongTien']) ?></td>
                         </tr>
                     </tfoot>
                     </tbody>

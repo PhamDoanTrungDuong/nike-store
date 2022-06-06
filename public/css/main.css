@@ -20,7 +20,7 @@ h1 {
 
 h3 {
   margin: 25px 0;
-  color: #ec455a;
+  color: #111;
   font-size: 25px;
   font-weight: bold;
   line-height: 0;
@@ -28,7 +28,7 @@ h3 {
 }
 
 h5 {
-  color: #ec455a;
+  color: #111;
   font-size: 20px;
   font-weight: bold;
   line-height: 0;
@@ -46,7 +46,7 @@ a {
 }
 
 p.error {
-  color: #ff4842;
+  color: rgba(192, 192, 192, 0);
   font-size: 14px;
   font-weight: 600;
   line-height: 1.1;
@@ -58,7 +58,7 @@ p.error {
 }
 
 .invalid-feedback {
-  color: #ff4842;
+  color: rgba(192, 192, 192, 0);
   font-size: 14px;
   font-weight: bold;
   line-height: 1.1;
@@ -180,13 +180,13 @@ p {
 }
 
 .pagination .page-item .page-link:focus {
-  -webkit-box-shadow: 0 0 0 0.15rem rgba(236, 69, 91, 0.6);
-          box-shadow: 0 0 0 0.15rem rgba(236, 69, 91, 0.6);
+  -webkit-box-shadow: 0 0 0 0.15rem #666666;
+          box-shadow: 0 0 0 0.15rem #666666;
 }
 
 .pagination .page-item.active .page-link {
-  background-color: #ec455a;
-  border-color: #ec455a;
+  background-color: #111;
+  border-color: #111;
   color: #fff;
 }
 
@@ -501,7 +501,7 @@ html::-webkit-scrollbar {
 
 .main-header .header__logo .header__name {
   margin-left: 20px;
-  color: #ff213d;
+  color: #333;
   font-size: 22px;
   font-weight: bold;
   line-height: 1.1;
@@ -535,7 +535,7 @@ html::-webkit-scrollbar {
 }
 
 .main-header .header .header__search input[type="text"]:focus {
-  border: solid 2px #ec455b79;
+  border: solid 2px #333;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
@@ -602,7 +602,7 @@ html::-webkit-scrollbar {
 
 .main-header .header .header__user__cart i {
   font-size: 35px;
-  color: #ec455a;
+  color: #111;
 }
 
 .main-header .header .header__user__cart__badge {
@@ -623,7 +623,7 @@ html::-webkit-scrollbar {
 
 .main-header .header .header__user__username {
   cursor: pointer;
-  color: #ec455a;
+  color: #111;
   font-size: 16px;
   font-weight: bold;
   line-height: 0;
@@ -640,8 +640,8 @@ html::-webkit-scrollbar {
   height: 50px;
   border-radius: 50%;
   border: 2px solid rgba(255, 255, 255, 0);
-  -webkit-box-shadow: 0 0 0 2px #ec455a;
-          box-shadow: 0 0 0 2px #ec455a;
+  -webkit-box-shadow: 0 0 0 2px #111;
+          box-shadow: 0 0 0 2px #111;
 }
 
 .main-header .header .header__user__avatar img {
@@ -717,8 +717,8 @@ html::-webkit-scrollbar {
   height: 100px;
   border-radius: 50%;
   border: 2px solid rgba(255, 255, 255, 0);
-  -webkit-box-shadow: 0 0 0 2px #ec455a;
-          box-shadow: 0 0 0 2px #ec455a;
+  -webkit-box-shadow: 0 0 0 2px #111;
+          box-shadow: 0 0 0 2px #111;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -832,7 +832,7 @@ html::-webkit-scrollbar {
 }
 
 .cart-detail__order__detail .cart-detail__order__detail__total .price {
-  color: #ec455a;
+  color: #111;
 }
 
 .cart-detail__order__detail input {
@@ -847,7 +847,7 @@ html::-webkit-scrollbar {
 }
 
 .cart-detail__order__detail input:focus {
-  border: 2px solid #ec455b8c;
+  border: 2px solid #333;
   -webkit-transition: all 200ms ease-in;
   transition: all 200ms ease-in;
 }
@@ -866,7 +866,7 @@ html::-webkit-scrollbar {
 }
 
 .cart-detail__order__detail textarea:focus {
-  border: 2px solid #ec455b8c;
+  border: 2px solid #333;
   -webkit-transition: all 200ms ease-in;
   transition: all 200ms ease-in;
 }
@@ -885,18 +885,18 @@ html::-webkit-scrollbar {
 }
 
 .cart-detail__order__text a {
-  color: #ec455a;
+  color: #111;
   font-weight: 700;
 }
 
 .cart-detail__order__text a:hover {
   text-decoration: underline;
-  color: #ec455a;
+  color: #111;
 }
 
 .btn--primary {
   color: #fff;
-  background-color: #ec455a;
+  background-color: #111;
   border: 1px solid transparent;
   border-radius: 60px;
   font-size: 16px;
@@ -910,20 +910,20 @@ html::-webkit-scrollbar {
 }
 
 .btn--primary--hover:hover {
-  color: #ec455a !important;
+  color: #111 !important;
   background-color: #fff !important;
-  border: 1px solid #ec455a !important;
+  border: 1px solid #111 !important;
 }
 
 .btn--primary:hover {
-  background-color: #d23f57;
+  background-color: #666666;
   color: #fff;
 }
 
 .btn--white {
-  color: #ec455a;
+  color: #111;
   background-color: #fff;
-  border: 1px solid #ec455a;
+  border: 1px solid #111;
   border-radius: 4px;
   font-size: 14px;
   font-weight: 500;
@@ -933,7 +933,7 @@ html::-webkit-scrollbar {
 }
 
 .btn--white:hover {
-  color: #d23f57;
+  color: #666666;
 }
 
 .title-nav {
@@ -1008,7 +1008,7 @@ html::-webkit-scrollbar {
 }
 
 .main-content-products .container .products-cart__book .control input:focus {
-  border: 2px solid #ec455b8c;
+  border: 2px solid #333;
   -webkit-transition: all 200ms ease-in;
   transition: all 200ms ease-in;
 }
@@ -1120,7 +1120,7 @@ html::-webkit-scrollbar {
 
 .main-content-products .container .products-cart__book table.table thead tr td:last-child,
 .main-content-products .container .products-cart__book table.table tbody tr td:last-child {
-  color: #ec455a;
+  color: #111;
   font-weight: bold;
 }
 
@@ -1161,7 +1161,7 @@ html::-webkit-scrollbar {
 }
 
 .main-content-products .container .products-cart__book .product-item-cart__total-price {
-  color: #ec455a;
+  color: #111;
   font-weight: 500;
 }
 
@@ -1247,7 +1247,7 @@ html::-webkit-scrollbar {
 .main-content-products .container .products-cart .products-cart__totals .sub-totals .subtotal,
 .main-content-products .container .products-cart .products-cart__totals .discount .subtotal,
 .main-content-products .container .products-cart .products-cart__totals .shipping .subtotal {
-  color: #212b36;
+  color: #666666;
   font-weight: 500;
 }
 
@@ -1261,7 +1261,7 @@ html::-webkit-scrollbar {
 }
 
 .main-content-products .container .products-cart .products-cart__totals .total span:last-child {
-  color: #ec455a;
+  color: #111;
 }
 
 .main-content-products .container .products-cart .products-cart__totals .coupon {
@@ -1291,7 +1291,7 @@ html::-webkit-scrollbar {
 }
 
 .main-content-products .container .products-cart .products-cart__totals .coupon:focus {
-  border: 1px solid #c83245;
+  border: 1px solid #333;
 }
 
 .main-content-products .container .products-cart .products-cart__totals .coupon input {
@@ -1366,7 +1366,7 @@ html::-webkit-scrollbar {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-  color: #ec455a;
+  color: #111;
 }
 
 .main-content-products .container .products-cart .products-cart__totals .coupon-btn span:hover {
@@ -1382,8 +1382,8 @@ html::-webkit-scrollbar {
 }
 
 .main-content-products .container .products-cart .products-cart__totals .checkout .btn-checkout {
-  -webkit-box-shadow: rgba(171, 0, 37, 0.24) 0px 8px 16px;
-          box-shadow: rgba(171, 0, 37, 0.24) 0px 8px 16px;
+  -webkit-box-shadow: rgba(155, 155, 155, 0.24) 0px 8px 16px;
+          box-shadow: rgba(155, 155, 155, 0.24) 0px 8px 16px;
 }
 
 .main-content-products .container .products-cart .products-cart__totals .checkout a {
@@ -1535,7 +1535,7 @@ html::-webkit-scrollbar {
 }
 
 .container .popular-book__item .popular-book__item__info__price {
-  color: #ec455a;
+  color: #111;
   font-size: 20px;
   font-weight: bold;
   line-height: 25px;
@@ -1585,11 +1585,11 @@ html::-webkit-scrollbar {
 }
 
 .trending .container .trending-product nav #navCategory .nav__item:hover {
-  color: #ec455a;
+  color: #111;
 }
 
 .trending .container .trending-product nav #navCategory .nav__item--active {
-  color: #ec455a;
+  color: #111;
   position: relative;
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
@@ -1669,7 +1669,7 @@ html::-webkit-scrollbar {
   margin: 0 auto;
   display: inline-block;
   padding: 4px 0px;
-  background: #f7566b;
+  background: #191919;
   color: white;
   text-align: center;
   border-radius: 22px;
@@ -1695,7 +1695,7 @@ html::-webkit-scrollbar {
 }
 
 .trending .container .trending-product .category-book .listProduct .category-book__item__image .addCartItem:hover {
-  background: #df4155;
+  background: #666666;
 }
 
 .trending .container .trending-product .category-book .listProduct .category-book__item__image .addCartItem:focus {
@@ -1714,7 +1714,7 @@ html::-webkit-scrollbar {
 }
 
 .trending .container .trending-product .category-book .listProduct .category-book__item__price {
-  color: #ec455a;
+  color: #111;
   font-size: 16px;
   font-weight: 600;
   line-height: normal;
@@ -1856,7 +1856,7 @@ html::-webkit-scrollbar {
 }
 
 .main-content-checkout .container .cart-detail .cart-detail__book .cart-detail__book__item .cart-detail__book__item__info .cart-detail__book__item__info__price {
-  color: #ec455a;
+  color: #111;
   font-weight: bold;
 }
 
@@ -1871,7 +1871,7 @@ html::-webkit-scrollbar {
 }
 
 .main-content-checkout .container .cart-detail .cart-detail__book .cart-detail__book__item .cart-detail__book__item__info .cart-detail__book__item__info__number:focus {
-  border: 2px solid #ec455b8c;
+  border: 2px solid #333;
   -webkit-transition: all 200ms ease-in;
   transition: all 200ms ease-in;
 }
@@ -1924,7 +1924,7 @@ html::-webkit-scrollbar {
 }
 
 .main-content-checkout .container .cart-detail .cart-detail__user-info__detail .cart-detail__user-info__detail__total .price {
-  color: #ec455a;
+  color: #111;
 }
 
 .main-content-checkout .container .cart-detail .cart-detail__user-info__detail input {
@@ -1939,7 +1939,7 @@ html::-webkit-scrollbar {
 }
 
 .main-content-checkout .container .cart-detail .cart-detail__user-info__detail input:focus {
-  border: 2px solid #ec455b8c;
+  border: 2px solid #333;
   -webkit-transition: all 200ms ease-in;
   transition: all 200ms ease-in;
 }
@@ -1958,7 +1958,7 @@ html::-webkit-scrollbar {
 }
 
 .main-content-checkout .container .cart-detail .cart-detail__user-info__detail textarea:focus {
-  border: 2px solid #ec455b8c;
+  border: 2px solid #333;
   -webkit-transition: all 200ms ease-in;
   transition: all 200ms ease-in;
 }
@@ -1974,13 +1974,13 @@ html::-webkit-scrollbar {
 }
 
 .main-content-checkout .container .cart-detail .cart-detail__user-info__text a {
-  color: #ec455a;
+  color: #111;
   font-weight: 700;
 }
 
 .main-content-checkout .container .cart-detail .cart-detail__user-info__text a:hover {
   text-decoration: underline;
-  color: #ec455a;
+  color: #111;
 }
 
 .popup-container {
@@ -2031,11 +2031,11 @@ html::-webkit-scrollbar {
 .popup-container .popup-detail__cart__content p a {
   font-family: "Nunito", sans-serif;
   font-weight: bold;
-  color: #ec455a;
+  color: #111;
 }
 
 .popup-container .popup-detail__cart__content p a:hover {
-  color: #ec455a;
+  color: #111;
   text-decoration: underline;
   cursor: pointer;
 }
@@ -2111,7 +2111,7 @@ html::-webkit-scrollbar {
 }
 
 .main-details-products .container .book-detail .book-detail__info .book-detail__info__price {
-  color: #ec455a;
+  color: #111;
   font-size: 23px;
   font-weight: bold;
   line-height: 1.1;
@@ -2208,7 +2208,7 @@ html::-webkit-scrollbar {
 .login__background .login__form__title {
   margin-bottom: 15px;
   text-align: center;
-  color: #ec455a;
+  color: #111;
   font-size: 30px;
   font-weight: 700;
   line-height: 35px;
@@ -2325,7 +2325,7 @@ html::-webkit-scrollbar {
 .signup__background .signup__form__title {
   margin-bottom: 15px;
   text-align: center;
-  color: #ec455a;
+  color: #111;
   font-size: 30px;
   font-weight: 700;
   line-height: 35px;
@@ -2468,7 +2468,7 @@ html::-webkit-scrollbar {
   width: 135px;
   height: 135px;
   border-radius: 100%;
-  border: 2px dashed #ec455a;
+  border: 2px dashed #111;
   color: #212b36;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -2590,7 +2590,7 @@ html::-webkit-scrollbar {
 }
 
 .profile__order__item__book .profile__order__item__info__price {
-  color: #ec455a;
+  color: #111;
   font-weight: bold;
 }
 
@@ -2614,7 +2614,7 @@ html::-webkit-scrollbar {
 }
 
 .profile__order__item__price .profile__order__item__info__price, .profile__order__item__detail .profile__order__item__info__price {
-  color: #ec455a;
+  color: #111;
   font-weight: bold;
 }
 /*# sourceMappingURL=main.css.map */

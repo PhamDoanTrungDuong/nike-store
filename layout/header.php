@@ -11,7 +11,7 @@ if (isset($_POST['key'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Duong's Bookstore</title>
+    <title>Nike's Store</title>
 
     <link rel="icon" href="./public/img/book.png" sizes="16x16">
     <link rel="icon" href="./public/img/book.png" sizes="192x192">
@@ -45,10 +45,10 @@ if (isset($_POST['key'])) {
             <div class="container header">
                 <a href="?mod=home" class="header__logo">
                     <img src="./public/img/book.png" alt="logo" style="width:64px;height:64px">
-                    <h1 class="header__name">Duong's <br> Bookstore</h1>
+                    <h1 class="header__name">Nike's <br> Store</h1>
                 </a>
                 <form class="header__search" action="?mod=search" method="post">
-                    <input type="text" name="key" placeholder="Tìm kiếm sách..."><input type="image" class="header__search__icon" src="./public/img/search.svg" alt="Search icon">
+                    <input type="text" name="key" placeholder="Tìm kiếm sản phẩm..."><input type="image" class="header__search__icon" src="./public/img/search.svg" alt="Search icon">
                 </form>
 
                 <div class="header__user d-flex align-items-center justify-content-between">
