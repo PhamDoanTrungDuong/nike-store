@@ -13,8 +13,8 @@ if (isset($_POST['key'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nike's Store</title>
 
-    <link rel="icon" href="./public/img/book.png" sizes="16x16">
-    <link rel="icon" href="./public/img/book.png" sizes="192x192">
+    <link rel="icon" href="./public/img/logo-nike.svg" sizes="16x16">
+    <link rel="icon" href="./public/img/logo-nike.svg" sizes="192x192">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" referrerpolicy="no-referrer" />
 
@@ -44,8 +44,7 @@ if (isset($_POST['key'])) {
         <div class="main-header pt-3">
             <div class="container header">
                 <a href="?mod=home" class="header__logo">
-                    <img src="./public/img/book.png" alt="logo" style="width:64px;height:64px">
-                    <h1 class="header__name">Nike's <br> Store</h1>
+                    <img src="./public/img/logo-nike.svg" alt="logo" style="width:64px;height:64px">
                 </a>
                 <form class="header__search" action="?mod=search" method="post">
                     <input type="text" name="key" placeholder="Tìm kiếm sản phẩm..."><input type="image" class="header__search__icon" src="./public/img/search.svg" alt="Search icon">

@@ -25,7 +25,7 @@
              <img src="./public/img/banner_kovi.svg" alt="banner">
          </div>
          <form id="signupForm" class="signup__form" action="" method="post">
-             <img class="signup__form__logo" src="./public/img/book.png" alt="logo">
+             <img class="signup__form__logo" src="./public/img/logo-nike.svg" alt="logo">
              <h1 class="signup__form__title">Đăng ký tài khoản <br> <span style="padding:10px 0">Dat's Bookstore</span></h1>
 
              <div class="d-flex">

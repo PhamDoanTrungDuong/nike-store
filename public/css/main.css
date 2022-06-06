@@ -495,8 +495,8 @@ html::-webkit-scrollbar {
 }
 
 .main-header .header__logo img {
-  width: 64px;
-  height: 64px;
+  width: 124px !important;
+  height: 93px !important;
 }
 
 .main-header .header__logo .header__name {

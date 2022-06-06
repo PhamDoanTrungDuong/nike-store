@@ -4,10 +4,10 @@
 
 <div class="container pb-2">
     <div class="banner">
-        <img src="./public/img/banner.jpg" alt="banner">
+        <img src="./public/img/banner.png" alt="banner">
     </div>
     <div class="popular-book__title mt-5">
-        <h3>Sách bán chạy trong tháng</h3>
+        <h3>Sản phẩm bán chạy trong tháng</h3>
     </div>
     <section class="popular-book">
         <?php foreach (show_popular() as $key => $popularBook) : ?>
@@ -33,7 +33,7 @@
     <div class="container p-80">
         <div class="trending-product">
             <div class="title">
-                <h3><span>Tất cả sách</span></h3>
+                <h3><span>Tất cả sản phẩm</span></h3>
             </div>
             <nav>
                 <ul id="navCategory" class="nav">

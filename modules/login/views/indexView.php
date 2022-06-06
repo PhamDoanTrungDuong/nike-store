@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dat's Bookstore</title>
+    <title>Nike's Store</title>
 
     <link rel="icon" href="./public/img/book.png" sizes="16x16">
     <link rel="icon" href="./public/img/book.png" sizes="192x192">
@@ -23,8 +23,8 @@
             <img src="./public/img/banner_kovi.svg" alt="banner">
         </div>
         <form id="loginForm" class="login__form" action="" method="POST">
-            <img class="login__form__logo" src="./public/img/book.png" alt="logo">
-            <h1 class="login__form__title">Đăng nhập <br> <span class="py-2">Dat's Bookstore!</span></h1>
+            <img class="login__form__logo" src="./public/img/logo-nike.svg" alt="logo">
+            <h1 class="login__form__title">Đăng nhập <br> <span class="py-2">Nike's Store</span></h1>
             <p class="login__form__message">
                 <span style="color:red">
 
@@ -41,7 +41,7 @@
                 <?php } ?>
             </div>
             <div class="login__form__input">
-                <label for="password">Mật khẩu (Kiểm thử: duong@123)</label>
+                <label for="password">Mật khẩu (Kiểm thử: Admin@123)</label>
                 <input id="password" type="password" name="password" placeholder="Nhập mật khẩu...">
                 <?php if (!empty($error['password'])) { ?>
                     <p class="error"><?php echo $error['password'] ?></p>
