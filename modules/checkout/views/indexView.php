@@ -15,7 +15,7 @@
                        <ul class="cart-detail__book">
                            <?php foreach ($_SESSION['carts']['buy'] as $key => $book) { ?>
                                <li class="cart-detail__book__item">
-                                   <a href="?mod=home&action=detail&id=<?= $book['MSHH'] ?>"><img class="cart-detail__book__item__image" src="./public/uploads/book-images/<?= $book['Hinh1'] ?>" alt="">
+                                   <a href="?mod=home&action=detail&id=<?= $book['MSHH'] ?>"><img class="cart-detail__book__item__image" src="./public/uploads/product-images/<?= $book['Hinh1'] ?>" alt="">
                                    </a>
                                    <div class="cart-detail__book__item__info">
                                        <a href="?mod=home&action=detail&id=<?= $book['MSHH'] ?>" class="cart-detail__book__item__info__title">

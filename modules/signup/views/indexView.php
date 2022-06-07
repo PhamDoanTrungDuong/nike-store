@@ -12,8 +12,8 @@
      <title>Document</title>
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
-     <link rel="icon" href="./public/img/book.png" sizes="16x16">
-     <link rel="icon" href="./public/img/book.png" sizes="192x192">
+     <link rel="icon" href="./public/img/logo-nike.svg" sizes="16x16">
+     <link rel="icon" href="./public/img/logo-nike.svg" sizes="192x192">
 
      <link rel="stylesheet" href="./public/css/main.css">
 

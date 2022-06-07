@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nike's Store</title>
 
-    <link rel="icon" href="./public/img/book.png" sizes="16x16">
-    <link rel="icon" href="./public/img/book.png" sizes="192x192">
+    <link rel="icon" href="./public/img/logo-nike.svg" sizes="16x16">
+    <link rel="icon" href="./public/img/logo-nike.svg" sizes="192x192">
 
     <!-- SWEETALERT2 CSS -->
     <link rel="stylesheet" href="./public/css/sweetalert2.min.css">
@@ -19,9 +19,6 @@
 
 <body>
     <div class="login__background">
-        <div class="login__img">
-            <img src="./public/img/banner_kovi.svg" alt="banner">
-        </div>
         <form id="loginForm" class="login__form" action="" method="POST">
             <img class="login__form__logo" src="./public/img/logo-nike.svg" alt="logo">
             <h1 class="login__form__title">Đăng nhập <br> <span class="py-2">Nike's Store</span></h1>

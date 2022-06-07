@@ -27,7 +27,7 @@
                                 <td>
                                     <div class="product-item-cart__name">
                                         <a href="?mod=home&action=detail&id=<?= $item['MSHH'] ?>">
-                                            <img class="product-item-cart__image" src="./public/uploads/book-images/<?= $item['Hinh1'] ?>" alt="">
+                                            <img class="product-item-cart__image" src="./public/uploads/product-images/<?= $item['Hinh1'] ?>" alt="">
                                         </a>
                                         <a href="?mod=home&action=detail&id=<?= $item['MSHH'] ?>" class="heading-product">
                                             <?= $item['TenHH'] ?>

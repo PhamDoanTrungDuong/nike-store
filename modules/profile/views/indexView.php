@@ -41,7 +41,7 @@
                         <?php foreach ($data['chitietdathang'] as $key => $order) : ?>
                             <?php if ($order['SoDonDH'] === $item['SoDonDH']) : ?>
                                 <li class="profile__order__item__book">
-                                    <a href="?mod=home&action=detail&id=<?php echo $order['MSHH'] ?>" ?><img class="profile__order__item__image" src="./public/uploads/book-images/<?= $order['Hinh1'] ?>" alt="">
+                                    <a href="?mod=home&action=detail&id=<?php echo $order['MSHH'] ?>" ?><img class="profile__order__item__image" src="./public/uploads/product-images/<?= $order['Hinh1'] ?>" alt="">
                                     </a>
                                     <div class="profile__order__item__info">
                                         <a href="" class="profile__order__item__info__title">

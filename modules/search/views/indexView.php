@@ -26,7 +26,7 @@ if (isset($key)) {
                                         <div class="category-book__item" data-id=<?php echo $book['MSHH'] ?> id="dataID">
                                              <div class="category-book__item__image">
                                                   <a href="?page=home&action=detail&id=<?php echo $book['MSHH'] ?>">
-                                                       <img src="./public/uploads/book-images/<?php echo $book['Hinh1'] ?>" alt="">
+                                                       <img src="./public/uploads/product-images/<?php echo $book['Hinh1'] ?>" alt="">
                                                   </a>
                                                   <a href="?page=home&action=add&id=<?php echo $book['MSHH'] ?>">
                                                        <button class="btn btn--primary align-items-center d-flex addCartItem">

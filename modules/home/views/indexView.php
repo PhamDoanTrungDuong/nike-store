@@ -12,7 +12,7 @@
     <section class="popular-book">
         <?php foreach (show_popular() as $key => $popularBook) : ?>
             <div class="popular-book__item">
-                <a href="?mod=home&action=detail&id=<?php echo $popularBook['MSHH'] ?>"> <img class="popular-book__item__image" src="./public/uploads/book-images/<?= $popularBook['Hinh1'] ?>" alt="Best Seller Book"></a>
+                <a href="?mod=home&action=detail&id=<?php echo $popularBook['MSHH'] ?>"> <img class="popular-book__item__image" src="./public/uploads/product-images/<?= $popularBook['Hinh1'] ?>" alt="Best Seller Book"></a>
                 <div class="popular-book__item__info">
                     <div class="popular-book__item__info__title"><a href=""><?= $popularBook['TenHH'] ?></a></div>
                     <div class="popular-book__item__info__price"><?= number_format($popularBook['Gia'], 0, '', ',') ?>đ </div>
@@ -56,7 +56,7 @@
                                 <div class="category-book__item" data-id=<?php echo $item['MSHH'] ?> id="dataID">
                                     <div class="category-book__item__image">
                                         <a href="?mod=home&action=detail&id=<?php echo $item['MSHH'] ?>">
-                                            <img src="./public/uploads/book-images/<?php echo $item['Hinh1'] ?>" alt="">
+                                            <img src="./public/uploads/product-images/<?php echo $item['Hinh1'] ?>" alt="">
                                         </a>
                                         <a href="?mod=home&action=add&id=<?php echo $item['MSHH'] ?>">
                                             <button class="btn btn--primary align-items-center d-flex addCartItem">
@@ -86,7 +86,7 @@
                                     <div class="category-book__item" data-id=<?php echo $book['MSHH'] ?> id="dataID">
                                         <div class="category-book__item__image">
                                             <a href="?mod=home&action=detail&id=<?php echo $book['MSHH'] ?>">
-                                                <img src="./public/uploads/book-images/<?php echo $book['Hinh1'] ?>" alt="">
+                                                <img src="./public/uploads/product-images/<?php echo $book['Hinh1'] ?>" alt="">
                                             </a>
                                             <a href="?mod=home&action=add&id=<?php echo $book['MSHH'] ?>">
                                                 <button class="btn btn--primary align-items-center d-flex addCartItem">

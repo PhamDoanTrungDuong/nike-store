@@ -33,7 +33,7 @@ get_header();
                                         <td>
                                             <div class="product-item-cart__name">
                                                 <a href="?mod=home&action=detail&id=<?php echo $value['MSHH'] ?>">
-                                                    <img class="product-item-cart__image" src="./public/uploads/book-images/<?php echo $value['Hinh1'] ?>" alt="">
+                                                    <img class="product-item-cart__image" src="./public/uploads/product-images/<?php echo $value['Hinh1'] ?>" alt="">
                                                 </a>
                                                 <a href="?mod=home&action=detail&id=<?= $value['MSHH'] ?>" class="heading-product">
                                                     <?php echo $value['TenHH'] ?>
