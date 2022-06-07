@@ -2,6 +2,13 @@
 
 defined('APPPATH') OR exit('Không được quyền truy cập phần này');
 
+// get Module name
+function get_module() {
+    global $config;
+    $module = isset($_GET['mod']) ? $_GET['mod'] : $config['default_module'];
+    return $module;
+}
+
 // get Controller name
 function get_controller() {
     global $config;
@@ -9,13 +16,6 @@ function get_controller() {
     return $controller;
 }
 
-// get Module name
-
-function get_module() {
-    global $config;
-    $module = isset($_GET['mod']) ? $_GET['mod'] : $config['default_module'];
-    return $module;
-}
 
 //get Action name
 function get_action() {
@@ -166,19 +166,19 @@ function get_sidebar($name = '') {
     }
 }
 
-function get_template_part($name) {
-    global $data;
-    if (empty($name))
-        return FALSE;
-    $path = LAYOUTPATH . DIRECTORY_SEPARATOR . "template-{$name}.php";
-    if (file_exists($path)) {
-        foreach ($data as $key => $a) {
-            $$key = $a;
-        }
-        require $path;
-    } else {
-        echo "Không tìm thấy {$path}";
-    }
-}
+// function get_template_part($name) {
+//     global $data;
+//     if (empty($name))
+//         return FALSE;
+//     $path = LAYOUTPATH . DIRECTORY_SEPARATOR . "template-{$name}.php";
+//     if (file_exists($path)) {
+//         foreach ($data as $key => $a) {
+//             $$key = $a;
+//         }
+//         require $path;
+//     } else {
+//         echo "Không tìm thấy {$path}";
+//     }
+// }
 
 ?>

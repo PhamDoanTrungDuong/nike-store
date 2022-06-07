@@ -37,7 +37,6 @@ if (is_array($autoload)) {
 
 
 
-//
 //connect db
 db_connect($db);
 
