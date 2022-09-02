@@ -24,7 +24,7 @@ require DATAPATH . DIRECTORY_SEPARATOR . 'popularBook.php';
 
 
 
-
+// appload.php => $autoload | base.php => load()
 if (is_array($autoload)) {
     foreach ($autoload as $type => $list_auto) {
         if (!empty($list_auto)) {

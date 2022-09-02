@@ -24,6 +24,30 @@ function db_query($query_string)
     return $result;
 }
 
+// mysqli_fetch_assoc
+// [Array] => Array
+//         (
+//             [MSKH] => 3
+//             [HoTenKH] => Phạm Đoàn Trùng Dương
+//              ...
+//         )
+
+// mysqli_fetch_array
+// [userLogin] => Array
+// (
+//     [0] => value
+//     [HoTenKH] => value
+//     ...
+// )
+
+// mysqli_fetch_row
+// [userLogin] => Array
+// (
+//     [0] => value
+//     [1] => value
+//     ...
+// )
+
 // Lấy một bản ghi trong CSDL
 function db_fetch_row($query_string)
 {
@@ -107,7 +131,7 @@ function escape_string($str)
     return mysqli_real_escape_string($conn, $str);
 }
 
-function mysqli_ac_id()
+function mysqli_ai_id()
 {
     global $conn;
     return mysqli_insert_id($conn);

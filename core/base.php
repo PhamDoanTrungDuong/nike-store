@@ -80,7 +80,7 @@ function call_function($list_function = array()) {
         }
     }
 }
-
+// $data['pages'] = $page
 function load_view($name, $data_send = array()) {
     global $data;
     $data = $data_send;

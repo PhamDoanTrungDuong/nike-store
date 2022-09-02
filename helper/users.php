@@ -1,7 +1,7 @@
 <?php
 function userDetail($email){
-    $product = db_fetch_row("SELECT * FROM khachhang WHERE Email = '$email'");
-   return $product;
+    $user = db_fetch_row("SELECT * FROM khachhang WHERE Email = '$email'");
+   return $user;
 }
 
 

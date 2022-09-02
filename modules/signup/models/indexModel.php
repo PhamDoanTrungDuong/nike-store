@@ -2,6 +2,6 @@
 
 
 function checkUserExits($Email){
-     $product = db_num_rows("SELECT * FROM khachhang WHERE Email = '$Email'");
-    return $product;
+     $user = db_num_rows("SELECT * FROM khachhang WHERE Email = '$Email'");
+    return $user;
 }

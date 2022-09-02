@@ -1,6 +1,6 @@
 <?php
 
-# Thêm thông tin vào giỏ hàng 
+# Thêm thông tin vào giỏ hàng
 function update_info_cart()
 {
     $SoLuongGioHang = 0;

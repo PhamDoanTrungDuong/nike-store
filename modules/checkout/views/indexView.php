@@ -1,9 +1,6 @@
 <?php
     get_header();
     ?>
-   <?php
-    
-    ?>
    <div class="main-content-checkout">
        <div class="container">
            <h3 class="title mt-5">Thanh toán</h3>
@@ -12,18 +9,22 @@
             ?>
                <form id="checkout" action="" method="post">
                    <div class="cart-detail">
-                       <ul class="cart-detail__book">
-                           <?php foreach ($_SESSION['carts']['buy'] as $key => $book) { ?>
-                               <li class="cart-detail__book__item">
-                                   <a href="?mod=home&action=detail&id=<?= $book['MSHH'] ?>"><img class="cart-detail__book__item__image" src="./public/uploads/product-images/<?= $book['Hinh1'] ?>" alt="">
+                       <ul class="cart-detail__product">
+                           <?php foreach ($_SESSION['carts']['buy'] as $key => $product) { ?>
+                               <li class="cart-detail__product__item">
+                                   <a href="?mod=home&action=detail&id=<?= $product['MSHH'] ?>">
+                                        <img class="cart-detail__product__item__image" src="./public/uploads/product-images/<?= $product['Hinh1'] ?>" alt="">
                                    </a>
-                                   <div class="cart-detail__book__item__info">
-                                       <a href="?mod=home&action=detail&id=<?= $book['MSHH'] ?>" class="cart-detail__book__item__info__title">
-                                           <?= $book['TenHH'] ?>
+                                   <div class="cart-detail__product__item__info">
+                                       <a href="?mod=home&action=detail&id=<?= $product['MSHH'] ?>" class="cart-detail__product__item__info__title">
+                                           <?= $product['TenHH'] ?>
                                        </a>
-                                       <input type="number" hidden id="priceOfBook<?= $key ?>" value="<?= $book['Gia'] ?>">
-                                       <p class="cart-detail__book__item__info__price"><?= number_format($book['Gia'], 0) ?>đ</p>
-                                       <label class="cart-detail__book__item__info__number" for="numOfBook<?= $book['MSHH'] ?>">Số lượng: <?= $book['SoLuong'] ?></label>
+
+                                       <input type="number" hidden id="priceOfBook<?= $key ?>" value="<?= $product['Gia'] ?>">
+
+                                       <p class="cart-detail__product__item__info__price"><?= number_format($product['Gia'], 0) ?>đ</p>
+
+                                       <label class="cart-detail__product__item__info__number" for="numOfBook<?= $product['MSHH'] ?>">Số lượng: <?= $product['SoLuong'] ?></label>
                                    </div>
                                </li>
                            <?php
@@ -41,7 +42,9 @@
                                    <p class="ml-3"><?= $_SESSION['userLogin']['SoDienThoai'] ?></p>
                                    <div class="cart-detail__user-info__detail__address">
                                        <b>Địa chỉ nhận hàng:</b>
-                                       <div> <textarea name="DiaChi" rows="3" cols="50" id="addressOfBook<?= $key ?>" placeholder="Nhập địa chỉ giao hàng của bạn..."></textarea></div>
+                                       <div>
+                                            <textarea name="DiaChi" rows="3" cols="50" id="addressOfBook<?= $key ?>" placeholder="Nhập địa chỉ giao hàng của bạn..."></textarea>
+                                        </div>
                                    </div>
 
                                    <div class="cart-detail__user-info__detail__total">
@@ -70,7 +73,7 @@
     ?>
        <form action="" method="post">
            <div class="cart-detail">
-               <div class="cart-detail__book__empty">
+               <div class="cart-detail__product__empty">
                    <img class="empty" src="./public/img/illustration_empty_cart.svg" alt="empty content">
                    <h3>Giỏ hàng rỗng</h3>
                    <p>Có vẻ như bạn không có quyển sách nào trong giỏ hàng của mình.</p>

@@ -1,22 +1,23 @@
 <?php
     get_header();
+    // echo show_array($data['list_product_type'])
 ?>
 
 <div class="container pb-2">
     <div class="banner">
         <img src="./public/img/banner.png" alt="banner">
     </div>
-    <div class="popular-book__title mt-5">
+    <div class="popular-product__title mt-5">
         <h3>Sản phẩm bán chạy trong tháng</h3>
     </div>
-    <section class="popular-book">
+    <section class="popular-product">
         <?php foreach (show_popular() as $key => $popularBook) : ?>
-            <div class="popular-book__item">
-                <a href="?mod=home&action=detail&id=<?php echo $popularBook['MSHH'] ?>"> <img class="popular-book__item__image" src="./public/uploads/product-images/<?= $popularBook['Hinh1'] ?>" alt="Best Seller Book"></a>
-                <div class="popular-book__item__info">
-                    <div class="popular-book__item__info__title"><a href=""><?= $popularBook['TenHH'] ?></a></div>
-                    <div class="popular-book__item__info__price"><?= number_format($popularBook['Gia'], 0, '', ',') ?>đ </div>
-                    <div class="popular-book__item__info__content"><?= $popularBook['GhiChu'] ?></div>
+            <div class="popular-product__item">
+                <a href="?mod=home&action=detail&id=<?php echo $popularBook['MSHH'] ?>"> <img class="popular-product__item__image" src="./public/uploads/product-images/<?= $popularBook['Hinh1'] ?>" alt="Best Seller Book"></a>
+                <div class="popular-product__item__info">
+                    <div class="popular-product__item__info__title"><a href=""><?= $popularBook['TenHH'] ?></a></div>
+                    <div class="popular-product__item__info__price"><?= number_format($popularBook['Gia'], 0, '', ',') ?>đ </div>
+                    <div class="popular-product__item__info__content"><?= $popularBook['GhiChu'] ?></div>
                     <a href="?mod=home&action=add&id=<?php echo $popularBook['MSHH'] ?>">
                         <button class="btn btn--primary align-items-center d-flex btn--primary--hover ">
                             <i class="mr-1 bi bi-handbag"></i> Thêm vào giỏ
@@ -46,15 +47,15 @@
                         <?php endif; ?>
                     <?php endforeach; ?>
             </nav>
-            <?php if (!empty($data['list_product']) && isset($_GET['id'])) {
+            <?php if (!empty($data['list_product_withType']) && isset($_GET['id'])) {
             ?>
-                <div class="category-book">
-                    <div class="listProduct row" id="category-book">
-                        <?php foreach ($data['list_product'] as $item) {
+                <div class="category-product">
+                    <div class="listProduct row" id="category-product">
+                        <?php foreach ($data['list_product_withType'] as $item) {
                         ?>
                             <div class="col-6 col-md-4 col-xl-3 ">
-                                <div class="category-book__item" data-id=<?php echo $item['MSHH'] ?> id="dataID">
-                                    <div class="category-book__item__image">
+                                <div class="category-product__item" data-id=<?php echo $item['MSHH'] ?> id="dataID">
+                                    <div class="category-product__item__image">
                                         <a href="?mod=home&action=detail&id=<?php echo $item['MSHH'] ?>">
                                             <img src="./public/uploads/product-images/<?php echo $item['Hinh1'] ?>" alt="">
                                         </a>
@@ -64,10 +65,10 @@
                                             </button>
                                         </a>
                                     </div>
-                                    <div class="category-book__item__title">
+                                    <div class="category-product__item__title">
                                         <?php echo $item['TenHH'] ?>
                                     </div>
-                                    <div class="category-book__item__price">
+                                    <div class="category-product__item__price">
                                         <?php echo currency_format($item['Gia']) ?>
                                     </div>
                                 </div>
@@ -79,26 +80,26 @@
             <?php
             } else {
             ?>
-                <div class="category-book">
-                    <div class="listProduct row" id="category-book">
-                        <?php if (!empty($data['products'])) : foreach ($data['products'] as $book) : ?>
+                <div class="category-product">
+                    <div class="listProduct row" id="category-product">
+                        <?php if (!empty($data['all_products'])) : foreach ($data['all_products'] as $product) : ?>
                                 <div class="col-6 col-md-4 col-xl-3">
-                                    <div class="category-book__item" data-id=<?php echo $book['MSHH'] ?> id="dataID">
-                                        <div class="category-book__item__image">
-                                            <a href="?mod=home&action=detail&id=<?php echo $book['MSHH'] ?>">
-                                                <img src="./public/uploads/product-images/<?php echo $book['Hinh1'] ?>" alt="">
+                                    <div class="category-product__item" data-id=<?php echo $product['MSHH'] ?> id="dataID">
+                                        <div class="category-product__item__image">
+                                            <a href="?mod=home&action=detail&id=<?php echo $product['MSHH'] ?>">
+                                                <img src="./public/uploads/product-images/<?php echo $product['Hinh1'] ?>" alt="">
                                             </a>
-                                            <a href="?mod=home&action=add&id=<?php echo $book['MSHH'] ?>">
+                                            <a href="?mod=home&action=add&id=<?php echo $product['MSHH'] ?>">
                                                 <button class="btn btn--primary align-items-center d-flex addCartItem">
                                                     <i class="bi bi-handbag"></i> Thêm vào giỏ
                                                 </button>
                                             </a>
                                         </div>
-                                        <div class="category-book__item__title">
-                                            <?php echo $book['TenHH'] ?>
+                                        <div class="category-product__item__title">
+                                            <?php echo $product['TenHH'] ?>
                                         </div>
-                                        <div class="category-book__item__price">
-                                            <?php echo currency_format($book['Gia']) ?>
+                                        <div class="category-product__item__price">
+                                            <?php echo currency_format($product['Gia']) ?>
                                         </div>
                                     </div>
                                 </div>

@@ -26,7 +26,7 @@
          </div>
          <form id="signupForm" class="signup__form" action="" method="post">
              <img class="signup__form__logo" src="./public/img/logo-nike.svg" alt="logo">
-             <h1 class="signup__form__title">Đăng ký tài khoản <br> <span style="padding:10px 0">Dat's Bookstore</span></h1>
+             <h1 class="signup__form__title">Đăng ký tài khoản <br> <span style="padding:10px 0">Nike's</span></h1>
 
              <div class="d-flex">
                  <div class="signup__form__input mr-2">

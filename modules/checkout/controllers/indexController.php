@@ -25,11 +25,14 @@ function indexAction()
         $result_dondathang = db_insert('dondathang', ['MSKH' => $MSKH, 'DiaChi' => $DiaChi, 'TongTien' => $TongTien]);
 
         if ($result_dondathang) {
-            $SoDonDH = mysqli_ac_id();
+            $SoDonDH = mysqli_ai_id();
             echo $SoDonDH;
             foreach ($_SESSION['carts']['buy'] as $value) {
                 db_insert('chitietdathang', ['SoDonDH' => $SoDonDH, 'MSHH' => $value['MSHH'], 'SoLuong' => $value['SoLuong'], 'GiaDatHang' => $value['Gia']]);
             }
+            //delete cart after checkout
+            unset($_SESSION['carts']);
+
             redirect("?mod=checkout&action=success");
         } else {
             echo "Đặt hàng thất bại!";

@@ -9,7 +9,7 @@
       grid-template-columns: 1.4fr 1fr;
       justify-items: center;
       gap: 20px;
-      &__book__empty {
+      &__product__empty {
         width: 96%;
         height: 77%;
         padding: 14px 20px;
@@ -40,13 +40,13 @@
       ul {
         margin-bottom: 0px !important;
       }
-      .cart-detail__book {
+      .cart-detail__product {
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.171);
         border-radius: $border-radius-6 + 5;
         padding: 40px 20px;
 
         width: 100%;
-        .cart-detail__book__item {
+        .cart-detail__product__item {
           width: 100%;
           display: flex;
           align-items: center;
@@ -65,14 +65,14 @@
             box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.158);
             object-fit: cover;
           }
-          .cart-detail__book__item__info {
+          .cart-detail__product__item__info {
             display: flex;
             flex-direction: column;
             justify-content: center;
             > * {
               margin-top: 10px;
             }
-            .cart-detail__book__item__info__title {
+            .cart-detail__product__item__info__title {
               font-weight: bold;
               overflow: hidden;
               text-overflow: ellipsis;
@@ -80,11 +80,11 @@
               -webkit-line-clamp: 2; /* number of lines to show */
               -webkit-box-orient: vertical;
             }
-            .cart-detail__book__item__info__price {
+            .cart-detail__product__item__info__price {
               color: $primary-color;
               font-weight: bold;
             }
-            .cart-detail__book__item__info__number {
+            .cart-detail__product__item__info__number {
               input {
                 width: 80px;
                 padding: 5px 10px;

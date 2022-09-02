@@ -1,11 +1,6 @@
 <?php
   get_header();
   ?>
-  <?php
-  // Thanh toán xong, xoá sp giỏ hàng
-  unset($_SESSION['carts']);
-  
-  ?>
   <div class="popup-container">
     <div class="popup-detail">
       <div class="popup-detail__cart">

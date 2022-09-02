@@ -13,7 +13,7 @@ get_header();
             <form action="?mod=cart&action=update" method="POST">
                 <h3 class="title mt-5">Giỏ hàng</h3>
                 <div class="products-cart">
-                    <div class="products-cart__book">
+                    <div class="products-cart__product">
                         <table class="table">
                             <thead>
                                 <tr>
@@ -48,8 +48,8 @@ get_header();
                                                 <input class="soluong" data-id="<?php echo $value['MSHH'] ?>" type="number" name="soluong[<?php echo $value['MSHH'] ?>]" min=1 max=99 value="<?php echo $value['SoLuong']; ?>">
                                             </div>
                                         </td>
-                                        <td id="total-price-<?php echo $value['MSHH'] ?>" class="product-item-cart__total-price"> <?php echo currency_format($value['SoLuong'] * $value['Gia'])
-                                                                                                                                    ?>
+                                        <td id="total-price-<?php echo $value['MSHH'] ?>" class="product-item-cart__total-price"> 
+                                            <?php echo currency_format($value['SoLuong'] * $value['Gia']) ?>
                                         </td>
                                         <td>
                                             <a href="?mod=cart&action=delete&id=<?php echo $value['MSHH'] ?>">
@@ -67,8 +67,8 @@ get_header();
 
                         </table>
                         <hr>
-                        <div class="products-cart__book__update">
-                            <a href="?mod=home" class="products-cart__book__update__back"><i class="fa fa-angle-left mr-2"></i>Tiếp tục mua sắm</a>
+                        <div class="products-cart__product__update">
+                            <a href="?mod=home" class="products-cart__product__update__back"><i class="fa fa-angle-left mr-2"></i>Tiếp tục mua sắm</a>
                         </div>
                     </div>
                     <div class="products-cart__totals">
@@ -111,7 +111,7 @@ get_header();
         ?>
             <h3 class="title mt-5">Giỏ hàng</h3>
             <div class="products-cart">
-                <div class="products-cart__book__empty">
+                <div class="products-cart__product__empty">
                     <img class="empty" src="./public/img/illustration_empty_cart.svg" alt="empty content">
                     <h3>Giỏ hàng rỗng</h3>
                     <p>Có vẻ như bạn không có quyển sách nào trong giỏ hàng của mình.</p>
