@@ -8,7 +8,7 @@
         </h3>
         <p class="text-right"><b>Ngày đặt hàng:</b> <?= $currentDate ?></p>
         <div class="products-cart">
-            <div class="products-cart__book">
+            <div class="products-cart__product">
                 <table class="table mb-0">
                     <thead>
                         <tr>
@@ -57,8 +57,8 @@
                     </tbody>
                 </table>
                 <hr class="mt-0">
-                <div class="products-cart__book__update">
-                    <a href="?mod=profile" class="products-cart__book__update__back"><i class="fa fa-angle-left mr-2"></i>Quay lại đơn hàng của tôi</a>
+                <div class="products-cart__product__update">
+                    <a href="?mod=profile" class="products-cart__product__update__back"><i class="fa fa-angle-left mr-2"></i>Quay lại đơn hàng của tôi</a>
                 </div>
             </div>
             <div class="cart-detail__order">
