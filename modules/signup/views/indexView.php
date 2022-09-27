@@ -15,14 +15,14 @@
      <link rel="icon" href="./public/img/logo-nike.svg" sizes="16x16">
      <link rel="icon" href="./public/img/logo-nike.svg" sizes="192x192">
 
-     <link rel="stylesheet" href="./public/css/main.css">
+     <link rel="stylesheet" href="./public/css/sass/main.css">
 
  </head>
 
  <body>
      <div class="signup__background">
          <div class="signup__img">
-             <img src="./public/img/banner_kovi.svg" alt="banner">
+             <img src="./public/img/banner.png" alt="banner">
          </div>
          <form id="signupForm" class="signup__form" action="" method="post">
              <img class="signup__form__logo" src="./public/img/logo-nike.svg" alt="logo">

@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="./public/css/sweetalert2.min.css">
 
     <!-- MAIN CSS -->
-    <link rel="stylesheet" href="./public/css/main.css">
+    <link rel="stylesheet" href="./public/css/sass/main.css">
 </head>
 
 <body>
