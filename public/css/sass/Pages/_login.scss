@@ -43,7 +43,7 @@
       font-size: $fs-7 - 1;
       input {
         font-family: $font-title;
-        border-radius: $border-radius-6 + 5;
+        // border-radius: $border-radius-6 + 5;
         border: 2px solid $color-dark-2;
         outline: none;
         font-size: $fs-7 - 1;
@@ -84,4 +84,7 @@
       }
     }
   }
+}
+.invalid-feedback {
+  color: red;
 }

@@ -1,14 +1,14 @@
 <footer id="footer" class="footer container-fluid">
-    <h5>About me</h5>
-    <img class="footer__avatar" src="./public/img/duong.png">
+    <h5 class="footer__about">About me</h5>
+    <!-- <img class="footer__avatar" src="./public/img/duong.png"> -->
     <div class="footer__info">
         <div>Phạm Đoàn Trùng Dương - B1910202
             <br>
-            Đồ án Công nghệ web - CT275 Nhóm **
+            Đồ án Công nghệ web - CT275 Nhóm 01
         </div>
         <ul class="footer__info__social">
-            <li><a href="https://www.facebook.com/trungduong212/" target="_blank"><img src="./public/img/icon-facebook.svg" alt="Facebook icon"></a></li>
             <li><a href="https://github.com/thienanga075" target="_blank"><img src="./public/img/icon-github.svg"></a></li>
+            <li><a href="https://www.facebook.com/trungduong212/" target="_blank"><img src="./public/img/icon-facebook.svg" alt="Facebook icon"></a></li>
             <li><a href="" target="_blank"><img src="./public/img/icon-linked.svg" alt="Linked icon"></a></li>
         </ul>
         <div class="footer__copyright">

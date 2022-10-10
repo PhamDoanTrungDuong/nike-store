@@ -68,21 +68,29 @@
 .trending {
   .container {
     .trending-product {
+      .title {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        margin: 15px 0;
+      }
       nav {
         display: flex;
         justify-content: center;
         #navCategory {
           z-index: 999;
-          margin-bottom: 36px;
+          margin-bottom: 30px;
           color: $content-color;
           font-family: $font-title;
-          width: 70%;
           font-weight: bold;
           font-size: 16px;
-          display: grid;
-          grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-          grid-gap: 20px 15px;
           justify-items: center;
+          a {
+            margin: 15px 15px;
+            padding: 10px 20px;
+            border-radius: $border-radius-6;
+            transition: all 200ms ease-in-out;
+          }
           li {
             cursor: pointer;
           }
@@ -90,6 +98,7 @@
             cursor: pointer;
             transition: all 200ms ease-in-out;
             &:hover {
+              background-color: gainsboro;
               color: $primary-color;
             }
           }
@@ -136,20 +145,20 @@
               overflow: hidden;
               display: inline-block;
               position: relative;
-              padding: 15px 25px;
+              // padding: 15px 25px;
 
               img {
                 width: 235px;
                 height: 315px;
                 object-fit: cover;
                 border-radius: $border-radius-4;
-                // box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.19);
+                box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.19);
                 transition: all 0.5s;
-                margin-bottom: 10px;
+                margin-bottom: 20px;
               }
-              .addCartItem {
-                width: 82%;
-                margin: 0 auto;
+              .addCartItemRight {
+                width: 40%;
+                // margin: 0 auto;
                 display: inline-block;
                 padding: 4px 0px;
                 background: $secondary-color;
@@ -158,18 +167,52 @@
                 border-radius: $border-radius-5;
                 transition: all 0.3s;
                 position: absolute;
-                bottom: 0px;
-                left: 50%;
+                bottom: 50px;
+                left: 125%;
                 transform: translate(-50%, 100%);
                 opacity: 0;
                 font-weight: bold;
                 justify-content: center;
-                z-index: 3;
+                z-index: 1000;
                 cursor: pointer;
                 font-size: 15px;
 
                 i {
                   margin-right: 5px;
+                  margin-top: 4px;
+                }
+
+                &:hover {
+                  background: $hover-color;
+                }
+                &:focus {
+                  box-shadow: none;
+                }
+              }
+              .addCartItemLeft {
+                width: 40%;
+                // margin: 0 auto;
+                display: inline-block;
+                padding: 4px 0px;
+                background: $secondary-color;
+                color: white;
+                text-align: center;
+                border-radius: $border-radius-5;
+                transition: all 0.3s;
+                position: absolute;
+                bottom: 50px;
+                right: 75%;
+                transform: translate(-50%, 100%);
+                opacity: 0;
+                font-weight: bold;
+                justify-content: center;
+                z-index: 1000;
+                cursor: pointer;
+                font-size: 15px;
+
+                i {
+                  margin-right: 5px;
+                  margin-top: 4px;
                 }
 
                 &:hover {
@@ -202,9 +245,13 @@
               text-align: center;
             }
             &:hover {
-              .btn {
+              .btn-right {
                 opacity: 1;
-                transform: translate(-50%, -50%);
+                left: 73%;
+              }
+              .btn-left {
+                opacity: 1;
+                right: 33%;
               }
             }
           }

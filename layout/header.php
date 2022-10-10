@@ -38,7 +38,6 @@ if (isset($_POST['key'])) {
 </head>
 
 <body>
-    
     <header>
         <div class="main-header pt-3">
             <div class="container header">
@@ -51,7 +50,7 @@ if (isset($_POST['key'])) {
 
                 <div class="header__user d-flex align-items-center justify-content-between">
                     <div class="header__user__cart">
-                        <a href="?mod=cart"><i class="bi bi-handbag"></i></a>
+                        <a href="?mod=cart"><i class="bi bi-cart3"></i></a>
                         <?php $SoLuongGioHang = get_num_order_cart();
                         if ($SoLuongGioHang > 0) {
                         ?>
@@ -63,7 +62,7 @@ if (isset($_POST['key'])) {
                     </div>
                     <?php if (isLogin()) : ?>
                         <a class=" header__user__username" href="?mod=profile">
-                            <span><?= $_SESSION['userLogin']['HoTenKH'] ?>
+                            <span>Welcom, <?= $_SESSION['userLogin']['HoTenKH'] ?>
                             </span>
                             <div class="header__user__avatar">
                                 <img src="./public/img/duong.png" alt="User Avatar">

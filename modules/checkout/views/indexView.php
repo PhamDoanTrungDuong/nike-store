@@ -52,7 +52,7 @@
                                        <b id="total" class="price"> <?= currency_format(get_total_cart()) ?></b>
                                    </div>
                                    <div class="cart-detail__user-info__detail__total">
-                                       <button class="btn btn--primary" name="btn-order">Đặt mua</button>
+                                       <button class="btn btn--primary" name="btn-order" style="border-radius: 0px">Đặt mua</button>
                                    </div>
                                </div>
                            </div>
@@ -100,7 +100,7 @@
                                    <b id="total" class="price"> <?= currency_format(get_total_cart()) ?></b>
                                </div>
                                <div class="cart-detail__user-info__detail__total disabled">
-                                   <button class="btn btn--primary" name="btn-order">Đặt mua</button>
+                                   <button class="btn btn--primary" name="btn-order" style="border-radius: 0px">Đặt mua</button>
                                </div>
                            </div>
                        </div>

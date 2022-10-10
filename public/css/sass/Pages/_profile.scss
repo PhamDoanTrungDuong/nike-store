@@ -1,12 +1,18 @@
 .profile {
-  margin: 20px 0;
-  display: grid;
-  grid-template-columns: 0.6fr 1fr;
-  gap: 30px;
+  border-radius: $border-radius-6 + 5;
+  padding: 30px 40px;
+  box-shadow: 0 0 5px rgba(44, 44, 44, 0.295);
+  // margin: 20px 0;
+  // display: grid;
+  // grid-template-columns: 0.6fr 1fr;
+  // gap: 30px;
+  &__order__label {
+    margin-top: 50px;
+  }
   input {
     font-family: $font-title;
     border-radius: $border-radius-6 + 5;
-    border: 2px solid rgba(192, 192, 192, 0);
+    // border: 2px solid rgba(192, 192, 192, 0);
     outline: none;
     padding: 10px 20px;
     width: 100%;
@@ -27,25 +33,24 @@
     grid-auto-flow: row;
     gap: 10px;
     align-items: center;
-
-    border-radius: $border-radius-6 + 5;
-    padding: 30px 40px;
-    box-shadow: 0 0 5px rgba(44, 44, 44, 0.295);
+    // border-radius: $border-radius-6 + 5;
+    // padding: 30px 40px;
+    // box-shadow: 0 0 5px rgba(44, 44, 44, 0.295);
   }
   &__item__card {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: $border-radius-6 + 5;
+    // border-radius: $border-radius-6 + 5;
     padding: 30px 0;
-    height: 75%;
-    box-shadow: 0 0 5px rgba(44, 44, 44, 0.295);
-    position: relative;
+    // height: 75%;
+    // box-shadow: 0 0 5px rgba(44, 44, 44, 0.295);
+    // position: relative;
     &__avatar {
-      width: 135px;
-      height: 135px;
+      width: 175px;
+      height: 175px;
       border-radius: $border-radius-100;
-      border: 2px dashed $primary-color;
+      // border: 2px dashed $primary-color;
       color: #212b36;
       display: inline-flex;
       line-height: 24px;
@@ -69,15 +74,19 @@
     }
   }
   &__item button {
-    justify-self: center;
+    justify-self: right;
     margin-top: 20px;
     width: fit-content;
     grid-column: 1 / span 2;
   }
-  &__info {
-    margin-top: 50px;
-  }
+  // &__info {
+  //   margin-top: 50px;
+  // }
   &__order {
+    // margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
     &__item {
       display: flex;
       flex-direction: column;
@@ -130,6 +139,14 @@
           }
         }
       }
+      &__tab {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: flex-start;
+        padding: 10px 12px;
+      }
       &__price,
       &__detail {
         b {
@@ -137,9 +154,9 @@
         }
         margin-top: 10px;
         line-height: 25px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
+        // display: flex;
+        // flex-direction: row;
+        // align-items: flex-start;
         .profile__order__item__info__price {
           color: $primary-color;
           font-weight: bold;

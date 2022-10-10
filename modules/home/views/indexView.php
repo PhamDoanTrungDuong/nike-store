@@ -1,13 +1,13 @@
 <?php
-    get_header();
-    // echo show_array($data['list_product_type'])
+get_header();
+// echo show_array($data['list_product_type'])
 ?>
 
 <div class="container pb-2">
     <div class="banner">
         <img src="./public/img/banner.png" alt="banner">
     </div>
-    <div class="popular-product__title mt-5">
+    <!-- <div class="popular-product__title mt-5">
         <h3>Sản phẩm bán chạy trong tháng</h3>
     </div>
     <section class="popular-product">
@@ -26,7 +26,7 @@
                 </div>
             </div>
         <?php endforeach; ?>
-    </section>
+    </section> -->
 </div>
 
 
@@ -59,14 +59,21 @@
                                         <a href="?mod=home&action=detail&id=<?php echo $item['MSHH'] ?>">
                                             <img src="./public/uploads/product-images/<?php echo $item['Hinh1'] ?>" alt="">
                                         </a>
-                                        <a href="?mod=home&action=add&id=<?php echo $item['MSHH'] ?>">
-                                            <button class="btn btn--primary align-items-center d-flex addCartItem">
-                                                <i class="bi bi-handbag"></i> Thêm vào giỏ
-                                            </button>
-                                        </a>
+                                        <div>
+                                            <a href="#">
+                                                <button class="btn btn-left btn--primary align-items-center d-flex addCartItemLeft">
+                                                    <i class="bi bi-heart"></i>
+                                                </button>
+                                            </a>
+                                            <a href="?mod=home&action=add&id=<?php echo $product['MSHH'] ?>">
+                                                <button class="btn btn-right btn--primary align-items-center d-flex addCartItemRight">
+                                                    <i class="bi bi-handbag"></i>
+                                                </button>
+                                            </a>
+                                        </div>
                                     </div>
                                     <div class="category-product__item__title">
-                                        <?php echo $item['TenHH'] ?>
+                                        <?php echo truncateTitle($item['TenHH']) ?>
                                     </div>
                                     <div class="category-product__item__price">
                                         <?php echo currency_format($item['Gia']) ?>
@@ -89,14 +96,21 @@
                                             <a href="?mod=home&action=detail&id=<?php echo $product['MSHH'] ?>">
                                                 <img src="./public/uploads/product-images/<?php echo $product['Hinh1'] ?>" alt="">
                                             </a>
-                                            <a href="?mod=home&action=add&id=<?php echo $product['MSHH'] ?>">
-                                                <button class="btn btn--primary align-items-center d-flex addCartItem">
-                                                    <i class="bi bi-handbag"></i> Thêm vào giỏ
-                                                </button>
-                                            </a>
+                                            <div>
+                                                <a href="#">
+                                                    <button class="btn btn-left btn--primary align-items-center d-flex addCartItemLeft">
+                                                        <i class="bi bi-heart"></i>
+                                                    </button>
+                                                </a>
+                                                <a href="?mod=home&action=add&id=<?php echo $product['MSHH'] ?>">
+                                                    <button class="btn btn-right btn--primary align-items-center d-flex addCartItemRight">
+                                                        <i class="bi bi-handbag"></i>
+                                                    </button>
+                                                </a>
+                                            </div>
                                         </div>
                                         <div class="category-product__item__title">
-                                            <?php echo $product['TenHH'] ?>
+                                            <?php echo truncateTitle($product['TenHH']) ?>
                                         </div>
                                         <div class="category-product__item__price">
                                             <?php echo currency_format($product['Gia']) ?>
@@ -146,5 +160,5 @@
 </section>
 
 <?php
-    get_footer()
+get_footer()
 ?>

@@ -28,14 +28,21 @@ if (isset($key)) {
                                                   <a href="?page=home&action=detail&id=<?php echo $product['MSHH'] ?>">
                                                        <img src="./public/uploads/product-images/<?php echo $product['Hinh1'] ?>" alt="">
                                                   </a>
-                                                  <a href="?page=home&action=add&id=<?php echo $product['MSHH'] ?>">
-                                                       <button class="btn btn--primary align-items-center d-flex addCartItem">
-                                                            <i class="bi bi-handbag"></i> Thêm vào giỏ
-                                                       </button>
-                                                  </a>
+                                                  <div>
+                                                       <a href="#">
+                                                            <button class="btn btn-left btn--primary align-items-center d-flex addCartItemLeft">
+                                                                 <i class="bi bi-heart"></i>
+                                                            </button>
+                                                       </a>
+                                                       <a href="?mod=home&action=add&id=<?php echo $product['MSHH'] ?>">
+                                                            <button class="btn btn-right btn--primary align-items-center d-flex addCartItemRight">
+                                                                 <i class="bi bi-handbag"></i>
+                                                            </button>
+                                                       </a>
+                                                  </div>
                                              </div>
                                              <div class="category-product__item__title">
-                                                  <?php echo $product['TenHH'] ?>
+                                                  <?php echo truncateTitle($product['TenHH']) ?>
                                              </div>
                                              <div class="category-product__item__price">
                                                   <?php echo currency_format($product['Gia']) ?>
@@ -47,9 +54,9 @@ if (isset($key)) {
                     </div>
                <?php elseif (isset($data) && is_string($data)) : ?>
                     <div class="d-flex flex-column align-items-center">
-                         <div><img src="./public/img/404.svg" display="block" alt="Not Found" style="display: block; max-width: 400px; width: 100%; margin-bottom: 1.5rem; "></div>
+                         <div><img src="./public/img/4042.png" display="block" alt="Not Found" style="display: block; max-width: 600px; width: 100%; margin-bottom: 1.5rem; "></div>
                          <h6 class="mt-3">Không tìm thấy kết quả liên quan nào</h6>
-                         <button class="btn btn--primary align-items-center mt-3"><a class="text-white" href="?page=home">Quay trở lại trang chủ</a></button>
+                         <button class="btn btn--primary align-items-center mt-3 mb-5"><a class="text-white" href="?page=home">Quay trở lại trang chủ</a></button>
                     </div>
                <?php endif; ?>
           </div>

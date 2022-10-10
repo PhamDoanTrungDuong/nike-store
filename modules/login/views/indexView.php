@@ -23,28 +23,28 @@
             <img class="login__form__logo" src="./public/img/logo-nike.svg" alt="logo">
             <h1 class="login__form__title">Đăng nhập <br> <span class="py-2">Nike's Store</span></h1>
             <p class="login__form__message">
-                <span style="color:red">
+                <span style="color: red;">
 
                 </span>
-                <span style="color:green">
+                <span style="color: green;">
 
                 </span>
             </p>
             <div class="login__form__input">
-                <label for="email">Email (Kiểm thử: duongb1910202@student.ctu.edu.vn)</label>
+                <label for="email">Email (duongb1910202@student.ctu.edu.vn)</label>
                 <input id="email" type="text" name="email" placeholder="Nhập email của bạn...">
                 <?php if (!empty($error['email'])) { ?>
                     <p class="error"><?php echo $error['email'] ?></p>
                 <?php } ?>
             </div>
             <div class="login__form__input">
-                <label for="password">Mật khẩu (Kiểm thử: Admin@123)</label>
+                <label for="password">Mật khẩu (Admin@123)</label>
                 <input id="password" type="password" name="password" placeholder="Nhập mật khẩu...">
                 <?php if (!empty($error['password'])) { ?>
                     <p class="error"><?php echo $error['password'] ?></p>
                 <?php } ?>
             </div>
-            <input type="submit" name="btn-login" class="btn btn--primary" value="Đăng nhập" style="padding:13px 0">
+            <input type="submit" name="btn-login" class="btn btn--primary" value="Đăng nhập" style="padding:13px 0; border-radius: 0px; margin-top: 15px">
             <div style="margin-left:auto; margin-top: 10px; text-align:center; width:100%">Chưa có tài khoản? <a href="?mod=signup" style="font-weight: bold; color: red; margin-left: 5px;">Đăng ký</a></div>
 
         </form>

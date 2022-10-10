@@ -21,9 +21,9 @@
 
  <body>
      <div class="signup__background">
-         <div class="signup__img">
+         <!-- <div class="signup__img">
              <img src="./public/img/banner.png" alt="banner">
-         </div>
+         </div> -->
          <form id="signupForm" class="signup__form" action="" method="post">
              <img class="signup__form__logo" src="./public/img/logo-nike.svg" alt="logo">
              <h1 class="signup__form__title">Đăng ký tài khoản <br> <span style="padding:10px 0">Nike's</span></h1>
@@ -42,30 +42,24 @@
              <div class="signup__form__input">
                  <label for="Email">Email <span style="color:red; font-weight: normal;">(*)</span></label>
                  <input value="" id="Email" type="email" name="Email">
-
              </div>
 
              <div class="signup__form__input">
                  <label for="password">Mật khẩu <span style="color:red; font-weight: normal;">(*)</span></label>
                  <input value="" id="password" type="password" name="password">
-
-
              </div>
+
              <div class="signup__form__input">
                  <label for="confirm_password">Nhập lại mật khẩu <span style="color:red; font-weight: normal;">(*)</span></label>
                  <input value="" id="confirm_password" type="password" name="confirm_password">
-
-
              </div>
 
              <div class="signup__form__input">
                  <label for="DiaChi">Địa chỉ <span style="color:red; font-weight: normal;">(*)</span></label>
                  <input value="" id="DiaChi" type="text" name="DiaChi">
-
-
              </div>
 
-             <button type="submit" class="btn btn--primary" name="btn-signup">Đăng ký</button>
+             <button type="submit" class="btn btn--primary" name="btn-signup" style="padding:13px 0; border-radius: 0px; margin-top: 15px">Đăng ký</button>
              <div style="margin-left:auto; margin-top: 10px; text-align:center; width:100%">Đã có tài khoản? <a href=" ?page=login" style="font-weight: bold; color: red; margin-left: 10px;">Đăng nhập</a></div>
          </form>
      </div>

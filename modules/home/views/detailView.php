@@ -36,15 +36,12 @@ while ($item = mysqli_fetch_array($data['detail'])) {
                             <i class="bi bi-handbag"></i> Thêm vào giỏ +
                         </button>
                     </a>
+                    <div class="product-detail__content">
+                        <p class="product-detail__content__title">Sơ lược sản phẩm</p>
+                        <p class="product-detail__content__content"><?= $item['GhiChu'] ?></p>
+                    </div>
                 </div>
-
             </div>
-            <div class="product-detail__content">
-                <p class="product-detail__content__title">Sơ lược sản phẩm</p>
-                <p class="product-detail__content__content"><?= $item['GhiChu'] ?></p>
-            </div>
-
-            <h3>Đánh Giá - Nhận Xét Từ Khách Hàng</h3>
         </div>
     </section>
 <?php

@@ -92,14 +92,8 @@ get_header();
                             <span> Tổng cộng</span>
                             <span id="total-product" class="total-product"><?php echo currency_format(get_total_cart()) ?></span>
                         </div>
-                        <div class="coupon d-flex align-items-center justify-content-between">
-                            <input type="text" placeholder="Nhập mã giảm giá (Nếu có)">
-                            <div class="coupon-btn">
-                                <span>Áp dụng</span>
-                            </div>
-                        </div>
                         <div class="checkout">
-                            <a href="?mod=checkout" class="btn btn--primary btn-checkout">Mua hàng
+                            <a href="?mod=checkout" class="btn btn--primary btn-checkout" style="border-radius: 0px">Mua hàng
                                 <i class="bi bi-chevron-right"></i>
                             </a>
                         </div>
@@ -147,7 +141,7 @@ get_header();
                         </div>
                     </div>
                     <div class="checkout disabled">
-                        <a href="?mod=checkout" class="btn btn--primary btn-checkout">Mua hàng
+                        <a href="?mod=checkout" class="btn btn--primary btn-checkout" style="border-radius: 0px">Mua hàng
                             <i class="bi bi-chevron-right"></i>
                         </a>
                     </div>
