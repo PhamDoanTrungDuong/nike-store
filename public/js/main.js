@@ -5,16 +5,6 @@ window.addEventListener("load", function () {
   truncateBookContent();
   truncateBookTitle();
 });
-
-function truncateBookContent() {
-  const bookList = $(".popular-book__item__info__content");
-  for (let i = 0; i < bookList.length; i++) {
-    const divContent = $(bookList[i]);
-    const text = divContent.html();
-    const nextText = truncateString(text, 300);
-    divContent.html(nextText);
-  }
-}
 function truncateBookTitle() {
   const bookList = $(".popular-book__item__info__title");
   for (let i = 0; i < bookList.length; i++) {

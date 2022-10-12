@@ -8,8 +8,10 @@ function construct()
 function indexAction()
 {
     load_view('index');
-    // kiểm tra đã singup
-    global    $error, $HoTenKH, $Email, $password, $confirm_password, $phone, $DiaChi;
+    /**
+     * Kiểm tra singup
+     */
+    global $error, $HoTenKH, $Email, $password, $confirm_password, $phone, $DiaChi;
     if (isset($_POST['btn-signup'])) {
         $error = array();
         if (empty($_POST['HoTenKH'])) {
@@ -46,7 +48,6 @@ function indexAction()
         }
         if (empty($error)) {
             if (!checkUserExits($Email)) {
-
                 $result = db_insert('khachhang', array(
                     'HoTenKH' => $HoTenKH,
                     'DiaChi' => $DiaChi,
@@ -54,7 +55,6 @@ function indexAction()
                     'Email' => $Email,
                     'password' => md5($password)
                 ));
-                show_array($result);
 
                 if ($result) {
                     $_SESSION['signupStatusMessage'] = "Đăng ký thành công!";

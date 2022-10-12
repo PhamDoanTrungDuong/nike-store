@@ -1,18 +1,22 @@
 <?php
-get_header();
+     get_header();
 ?>
 <?php
-$key = $_SESSION['key'];
-$key = trim($key);
-$data = "";
-if (isset($key)) {
-     $sql  = "SELECT * FROM `hanghoa` WHERE TENHH LIKE '%$key%'";
-
-     if (db_fetch_array($sql)) {
-          $data = db_fetch_array($sql);
+     /**
+      * $key được lấy từ $_SESSION được lưu ở header.php (searchForm)
+      */
+     $key = $_SESSION['key'];
+     $key = trim($key);
+     $data = "";
+     if (isset($key)) {
+          $sql  = "SELECT * FROM `hanghoa` WHERE TENHH LIKE '%$key%'";
+          /**
+           * Kiểm tra nếu tồn tại sản phẩm
+           */
+          if (db_fetch_array($sql)) {
+               $data = db_fetch_array($sql);
+          }
      }
-}
-
 ?>
 <section class="trending trending-bottom">
      <div class="container p-80">

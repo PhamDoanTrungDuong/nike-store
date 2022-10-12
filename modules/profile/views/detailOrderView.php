@@ -1,10 +1,11 @@
 <?php
-     get_header();
+    get_header();
+    show_array($data)
 ?>
 <div class="main-content-products">
 
     <div class="container">
-        <h3 class="title mt-5">Chi tiết đơn hàng #<?= $dondathang[0]['SoDonDH'] ?>
+        <h3 class="title mt-5">Chi tiết đơn hàng #<?= $data['dondathang'][0]['SoDonDH'] ?>
         </h3>
         <p class="text-right"><b>Ngày đặt hàng:</b> <?= $currentDate ?></p>
         <div class="products-cart">
@@ -21,7 +22,7 @@
 
                     <tbody id="product-item">
                         <?php
-                        foreach ($dondathang as $key => $item) :
+                        foreach ($data['dondathang'] as $key => $item) :
                         ?>
                             <tr class="product-item-cart" data-id="<?= $item['MSHH'] ?>">
                                 <td>

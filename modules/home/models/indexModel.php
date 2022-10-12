@@ -1,19 +1,29 @@
 <?php
 //===============================INDEX=====================================
+/**
+ * Lấy Loại sản phẩm (tên)
+ */
+function get_product_type(){
+    $list_product_type = db_fetch_array("SELECT * FROM loaihanghoa");
+    return $list_product_type;
+}
+
+/**
+ * Lấy danh sách sản phẩm theo Loại
+ */
 function get_list_product_byId($id){
     $list_product = db_fetch_array("SELECT *FROM hanghoa h join loaihanghoa l on h.MaLoaiHang = l.MaLoaiHang WHERE h.MALOAIHANG = '$id'");
     return $list_product;
 }
 
+/**
+ * Lấy danh sach sản phẩm
+ */
 function get_list_product(){
     $list_product_all = db_fetch_array("SELECT *FROM hanghoa");
     return $list_product_all;
 }
 
-function get_product_type(){
-    $list_product_type = db_fetch_array("SELECT * FROM loaihanghoa");
-    return $list_product_type;
-}
 
 function getProduct($startProduct, $product)
 {
@@ -22,7 +32,9 @@ function getProduct($startProduct, $product)
     return $result;
 }
 
-//vi tri san pham bat dau muon lay
+/**
+ * Vị trí sản phẩm băt đầu (pagination)
+ */
 function start_product($page, $products){
     $startProduct =  $page * $products - $products;
     // show san pham
@@ -31,6 +43,9 @@ function start_product($page, $products){
     return $data;
 }
 
+/**
+ * Tổng số trang
+ */
 function totalPages($products){
     // dem so luong san pham // 40sp
      $rowCount = count(get_list_product());
@@ -42,14 +57,18 @@ function totalPages($products){
 }
 
 //===============================DETAIL=====================================
-
+/**
+ * Lấy sản phẩm theo Id
+ */
 function get_product_byID($id){
     $sql_detail = db_query("SELECT *FROM hanghoa h join loaihanghoa l on h.MaLoaiHang = l.MaLoaiHang WHERE MSHH='$id'");
 
     return $sql_detail;
 }
 
-
+/**
+ * Lấy Id từ URL
+ */
 function GET_id(){
     if (isset($_GET['id'])) {
         $id = (int)$_GET['id'];

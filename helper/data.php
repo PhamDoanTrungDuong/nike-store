@@ -1,4 +1,8 @@
 <?php
+/**
+ * format data == array()
+ */
+
 function show_array($arr){
     if(is_array($arr)){
         echo "<pre>";

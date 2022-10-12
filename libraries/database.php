@@ -1,6 +1,8 @@
 <?php
 
-// Hàm kết nối dữ liệu
+/**
+ *  Hàm kết nối dữ liệu
+ */
 function db_connect()
 {
     global $conn;
@@ -13,7 +15,9 @@ function db_connect()
 
 }
 
-//Thực thi chuổi truy vấn
+/**
+ * Thực thi chuổi truy vấn
+ */
 function db_query($query_string)
 {
     global $conn;
@@ -23,32 +27,35 @@ function db_query($query_string)
     }
     return $result;
 }
+/**
+ * mysqli_fetch_assoc
+ *[Array] => Array
+ *(
+ *    [MSKH] => 3
+ *    [HoTenKH] => Phạm Đoàn Trùng Dương
+ *    ...
+ *)
+ *-----------------------------------------
+ * mysqli_fetch_array
+ *[userLogin] => Array
+ *(
+ *    [0] => value
+ *    [HoTenKH] => value
+ *    ...
+ *)
+ *-----------------------------------------
+ * mysqli_fetch_row
+ *[userLogin] => Array
+ *(
+ *    [0] => value
+ *    [1] => value
+ *    ...
+ *)
+ */
 
-// mysqli_fetch_assoc
-// [Array] => Array
-//         (
-//             [MSKH] => 3
-//             [HoTenKH] => Phạm Đoàn Trùng Dương
-//              ...
-//         )
-
-// mysqli_fetch_array
-// [userLogin] => Array
-// (
-//     [0] => value
-//     [HoTenKH] => value
-//     ...
-// )
-
-// mysqli_fetch_row
-// [userLogin] => Array
-// (
-//     [0] => value
-//     [1] => value
-//     ...
-// )
-
-// Lấy một bản ghi trong CSDL
+/**
+ * Lấy một bản ghi trong CSDL
+ */
 function db_fetch_row($query_string)
 {
     global $conn;
@@ -59,7 +66,9 @@ function db_fetch_row($query_string)
     return $result;
 }
 
-//Lấy một mảng trong CSDL
+/**
+ * Lấy mảng dữ liệu trong CSDL
+ */
 function db_fetch_array($query_string)
 {
     global $conn;
@@ -71,7 +80,10 @@ function db_fetch_array($query_string)
     mysqli_free_result($mysqli_result);
     return $result;
 }
-//Lấy số bản ghi
+
+/**
+ * Lấy số bản ghi
+ */
 function db_num_rows($query_string)
 {
     global $conn;
@@ -79,6 +91,9 @@ function db_num_rows($query_string)
     return mysqli_num_rows($mysqli_result);
 }
 
+/**
+ * Thêm bản ghi
+ */
 function db_insert($table, $data)
 {
     global $conn;
@@ -98,6 +113,9 @@ function db_insert($table, $data)
     return mysqli_insert_id($conn);
 }
 
+/**
+ * Cập nhật dữ liệu
+ */
 function db_update($table, $data, $where)
 {
     global $conn;
@@ -117,6 +135,9 @@ function db_update($table, $data, $where)
     return mysqli_affected_rows($conn);
 }
 
+/**
+ * Xóa bản ghi
+ */
 function db_delete($table, $where)
 {
     global $conn;
@@ -125,26 +146,36 @@ function db_delete($table, $where)
     return mysqli_affected_rows($conn);
 }
 
+/**
+ * Loại bỏ các ký tự đặc biệt tránh bị SQLi
+ */
 function escape_string($str)
 {
     global $conn;
     return mysqli_real_escape_string($conn, $str);
 }
 
+/**
+ * Auto Increament Id
+ */
 function mysqli_ai_id()
 {
     global $conn;
     return mysqli_insert_id($conn);
 }
 
+/**
+ * Gọi hàm thủ tục
+ */
 function call_procedure($updateInfo)
 {
     global $conn;
     return mysqli_query($conn, $updateInfo);
 }
 
-// Hiển thị lỗi SQL
-
+/**
+ * Hiển thị lỗi SQL
+ */
 function db_sql_error($message, $query_string = "")
 {
     global $conn;

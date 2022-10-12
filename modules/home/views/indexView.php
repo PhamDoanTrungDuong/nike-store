@@ -1,32 +1,11 @@
 <?php
-get_header();
-// echo show_array($data['list_product_type'])
+    get_header();
 ?>
 
 <div class="container pb-2">
     <div class="banner">
         <img src="./public/img/banner.png" alt="banner">
     </div>
-    <!-- <div class="popular-product__title mt-5">
-        <h3>Sản phẩm bán chạy trong tháng</h3>
-    </div>
-    <section class="popular-product">
-        <?php foreach (show_popular() as $key => $popularBook) : ?>
-            <div class="popular-product__item">
-                <a href="?mod=home&action=detail&id=<?php echo $popularBook['MSHH'] ?>"> <img class="popular-product__item__image" src="./public/uploads/product-images/<?= $popularBook['Hinh1'] ?>" alt="Best Seller Book"></a>
-                <div class="popular-product__item__info">
-                    <div class="popular-product__item__info__title"><a href=""><?= $popularBook['TenHH'] ?></a></div>
-                    <div class="popular-product__item__info__price"><?= number_format($popularBook['Gia'], 0, '', ',') ?>đ </div>
-                    <div class="popular-product__item__info__content"><?= $popularBook['GhiChu'] ?></div>
-                    <a href="?mod=home&action=add&id=<?php echo $popularBook['MSHH'] ?>">
-                        <button class="btn btn--primary align-items-center d-flex btn--primary--hover ">
-                            <i class="mr-1 bi bi-handbag"></i> Thêm vào giỏ
-                        </button>
-                    </a>
-                </div>
-            </div>
-        <?php endforeach; ?>
-    </section> -->
 </div>
 
 

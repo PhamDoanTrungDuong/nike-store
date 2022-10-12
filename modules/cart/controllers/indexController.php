@@ -15,7 +15,9 @@ function deleteAction()
 {
     load('helper', 'format');
 
-    // Xoá sản phẩm
+    /**
+     *  Xoá sản phẩm theo Id
+     */
     $id = (int) $_GET['id'];
     $_SESSION['deleteCartStatusMessage'] = "Xoá thành công!";
     $_SESSION['deleteCartStatusCode'] = "success";
@@ -24,6 +26,9 @@ function deleteAction()
     redirect("?mod=cart");
 }
 
+/**
+ * Được gọi từ ajax
+ */
 function updateAction()
 {
     load('helper', 'format');
@@ -34,27 +39,35 @@ function updateAction()
     $item = get_product_by_id($id);
 
     if (isset($_SESSION['carts']) && array_key_exists($id, $_SESSION['carts']['buy'])) {
-        // Cap nhat gio hang
+        /**
+         * Cập nhật số lượng trong giở hàng
+         */
         $_SESSION['carts']['buy'][$id]['SoLuong'] = $SoLuong;
 
-        //Cap nhat tong tien
+        /**
+         * Cập nhật tổng tiền
+         */
         $Tong_Tien = $SoLuong * $item['Gia'];
         $_SESSION['carts']['buy'][$id]['TongTien'] = $Tong_Tien;
 
-        // Cap nhat toan bo gio hang
+        /**
+         * Cập nhật thông tin giỏ hàng
+         */
         update_info_cart();
 
-        // Lay tong gia tri trong gio hang
+        /**
+         * Lấy tổng tiền trong giỏ hàng
+         */
         $Tong = get_total_cart();
 
         $SoLuongGioHang = get_num_order_cart();
-        // Gia tri tra ve
+
         $data = array(
             'Tong_Tien' => currency_format(($Tong_Tien)),
             'Tong' => currency_format($Tong),
             'SoLuongGH' => $SoLuongGioHang
-
         );
+
         echo json_encode($data);
     }
 }

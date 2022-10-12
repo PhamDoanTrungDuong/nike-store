@@ -1,6 +1,9 @@
 <?php
 
-# Thêm thông tin vào giỏ hàng
+/**
+ * Cập nhật thông tin vào giỏ hàng
+ */
+
 function update_info_cart()
 {
     $SoLuongGioHang = 0;
@@ -16,15 +19,9 @@ function update_info_cart()
     );
 }
 
-// function update_cart($soluong)
-// {
-//     foreach ($soluong as $id => $new_soluong) {
-//         $_SESSION['carts']['buy'][$id]['SoLuong'] = $new_soluong;
-//         $_SESSION['carts']['buy'][$id]['TongTien'] = $new_soluong *  $_SESSION['carts']['buy'][$id]['Gia'];
-//     }
-//     update_info_cart();
-// }
-
+/**
+ * Lấy số lượng sản phẩm trong giỏ hàng
+ */
 
 function get_num_order_cart()
 {
@@ -35,6 +32,10 @@ function get_num_order_cart()
     return false;
 }
 
+/**
+ * Lấy tổng tiền trong giỏ hàng
+ */
+
 function get_total_cart()
 {
     if (isset($_SESSION['carts'])) {
@@ -42,6 +43,10 @@ function get_total_cart()
     }
     return false;
 }
+
+/**
+ * Lấy sản phẩm theo Id
+ */
 
 function get_product_by_id($id){
     $product = db_fetch_row("SELECT *FROM hanghoa WHERE MSHH = $id");

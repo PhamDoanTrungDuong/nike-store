@@ -1,30 +1,41 @@
 <?php
 defined('APPPATH') OR exit('Không được quyền truy cập phần này');
 
-// Include file config/database
+/**
+ * require config/database.php
+ */
 require CONFIGPATH . DIRECTORY_SEPARATOR . 'database.php';
 
-// Include file config/config
+/**
+ * require config/config/php
+ */
 require CONFIGPATH . DIRECTORY_SEPARATOR . 'config.php';
 
-// Include file config/email
+/**
+ * require config/email.php
+ */
 require CONFIGPATH . DIRECTORY_SEPARATOR . 'email.php';
 
-// Include file config/autoload
+/**
+ * require config/autoload.php
+ */
 require CONFIGPATH . DIRECTORY_SEPARATOR . 'autoload.php';
 
-// Include core database
+/**
+ * require libraries/database.php
+ */
 require LIBPATH . DIRECTORY_SEPARATOR . 'database.php';
 
-// Include core base
+/**
+ * require core/base.php
+ */
 require COREPATH . DIRECTORY_SEPARATOR . 'base.php';
 
-// Include data folder
-require DATAPATH . DIRECTORY_SEPARATOR . 'popularBook.php';
 
-
-
-// appload.php => $autoload | base.php => load()
+/**
+ * autoload.php định nghĩa $autoload | base.php gọi load() line: 44
+ * require lib, help, data,...
+ */
 if (is_array($autoload)) {
     foreach ($autoload as $type => $list_auto) {
         if (!empty($list_auto)) {
@@ -37,13 +48,21 @@ if (is_array($autoload)) {
 
 
 
-//connect db
+/**
+ * kết nối database từ config/database.php
+ */
+
 db_connect($db);
 
-//start session
+/**
+ * bật session
+ */
 ob_start();
 session_start();
 
+/**
+ * require core/router.php
+ */
 require COREPATH . DIRECTORY_SEPARATOR . 'router.php';
 
 

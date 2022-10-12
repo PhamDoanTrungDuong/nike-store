@@ -2,7 +2,7 @@
 
 /*
  * --------------------------------------------------------------------
- * app path
+ * app path (Định ngĩa đường dẫn của app)
  * --------------------------------------------------------------------
  */
 
@@ -10,7 +10,7 @@ $app_path = dirname(__FILE__);
 define('APPPATH', $app_path);
 /*
  * --------------------------------------------------------------------
- * core path
+ * core path (Định nghĩa folder core)
  * --------------------------------------------------------------------
  */
 $core_folder = 'core';
@@ -18,7 +18,7 @@ define('COREPATH', APPPATH.DIRECTORY_SEPARATOR.$core_folder);
 
 /*
  * --------------------------------------------------------------------
- * modules path
+ * modules path (Định nghĩa folder module)
  * --------------------------------------------------------------------
  */
 $modules_folder = 'modules';
@@ -27,7 +27,7 @@ define('MODULESPATH', APPPATH.DIRECTORY_SEPARATOR.$modules_folder);
 
 /*
  * --------------------------------------------------------------------
- * helper path
+ * helper path (Định nghĩa folder helper)
  * --------------------------------------------------------------------
  */
 
@@ -37,7 +37,7 @@ define('HELPERPATH', APPPATH.DIRECTORY_SEPARATOR.$helper_folder);
 
 /*
  * --------------------------------------------------------------------
- * library path
+ * library path (Định nghĩa folder library)
  * --------------------------------------------------------------------
  */
 $lib_folder= 'libraries';
@@ -46,7 +46,7 @@ define('LIBPATH', APPPATH.DIRECTORY_SEPARATOR.$lib_folder);
 
 /*
  * --------------------------------------------------------------------
- * layout path
+ * layout path (Định nghĩa folder layout)
  * --------------------------------------------------------------------
  */
 $layout_folder= 'layout';
@@ -54,7 +54,7 @@ define('LAYOUTPATH', APPPATH.DIRECTORY_SEPARATOR.$layout_folder);
 
 /*
  * --------------------------------------------------------------------
- * config path
+ * config path (Định nghĩa folder config)
  * --------------------------------------------------------------------
  */
 $config_folder= 'config';
@@ -62,11 +62,11 @@ define('CONFIGPATH', APPPATH.DIRECTORY_SEPARATOR.$config_folder);
 
 /*
  * --------------------------------------------------------------------
- * data path
+ * data path (Định nghĩa folder data)
  * --------------------------------------------------------------------
  */
 $data_folder= 'data';
 define('DATAPATH', APPPATH.DIRECTORY_SEPARATOR.$data_folder);
 
-
+// require core/appload.php
 require COREPATH.DIRECTORY_SEPARATOR.'appload.php';

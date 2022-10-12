@@ -1,8 +1,9 @@
 <?php
-
+/**
+ * Xóa sản phẩm trong giỏ hàng theo Id
+ */
 function delete_cart($id)
 {
-    # Xoá sản phẩm có $id trong giỏ hàng
     if (isset($_SESSION['carts'])) {
         if (!empty($id)) {
             unset($_SESSION['carts']['buy'][$id]);

@@ -1,4 +1,7 @@
 <?php
+/**
+ * Rút gọn tên sản phẩm
+ */
 
 function truncateTitle($string) {
    if(strlen($string) > 30)

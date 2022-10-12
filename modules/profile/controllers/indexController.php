@@ -11,9 +11,6 @@ function indexAction()
     if (isset($_SESSION['userLogin'])) {
         $email = $_SESSION['userLogin']['Email'];
 
-        product_detail($email);
-        order($email);
-
         $data['chitietdathang'] = product_detail($email);
         $data['dondathang'] = order($email);
 
@@ -47,7 +44,9 @@ function detailOrderAction()
 
     $dondathang = order_detail($id);
 
-    // format day
+    /**
+     * format ngày
+     */
     $originalDate = $dondathang[0]['NgayDH'];
     $currentDate = date("H:i d-m-Y", strtotime($originalDate));
 
