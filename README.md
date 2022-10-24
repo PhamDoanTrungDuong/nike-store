@@ -1,6 +1,10 @@
 "# NikeStore"
 
 <!--
+      index => appload => router 
+ -->
+
+<!--
    [x] home
    [x] detailProduct
    [x] profile

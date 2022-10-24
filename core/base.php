@@ -85,6 +85,7 @@ function load($type, $name) {
 
 function call_function($list_function = array()) {
     if (is_array($list_function)) {
+        show_array($list_function);
         foreach ($list_function as $f) {
             if (function_exists($f())) {
                 $f();
@@ -112,11 +113,11 @@ function load_view($name, $data_send = array()) {
         *           [1] => Array ()
         *           [2] => Array ()
         *       )
-        *   [currentDate] => :date:
+        *       [currentDate] => :date:
         *)
-        *   Tạo vòng lặp foreach gán nhãn của $data thành $$data để sử dụng bên View.php mà không   cần phải truy xuất vào mảng $data[] truy xuất thăng vào biến VD: $dondathang, $currentDate thay thì $data['dondathang'], $data['currentDate']
+        *   Tạo vòng lặp foreach gán nhãn của $data thành $$data để sử dụng trong View.php mà không cần phải truy xuất thông qua mảng $data[], mà truy xuất thăng vào biến VD: $dondathang, $currentDate thay vì $data['dondathang'], $data['currentDate']
         *
-        * foreach ($data as $key_data => $v_data) { // data as $currentDate => $(:data):
+        * foreach ($data as $key_data => $v_data) { // data as $currentDate => $(:data:)
         *         $$key_data = $v_data;             // $($currentDate) => $(:data:)
         * }
         */

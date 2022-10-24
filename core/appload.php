@@ -33,7 +33,7 @@ require COREPATH . DIRECTORY_SEPARATOR . 'base.php';
 
 
 /**
- * autoload.php định nghĩa $autoload | base.php gọi load() line: 44
+ * autoload.php định nghĩa $autoload | base.php gọi load() line: 60
  * require lib, help, data,...
  */
 if (is_array($autoload)) {
