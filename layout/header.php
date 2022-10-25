@@ -67,8 +67,10 @@ if (isset($_POST['key'])) {
                             </span>
                             <div class="header__user__avatar">
                                 <img src="./public/img/duong.png" alt="User Avatar">
+                                <?php if($_SESSION['userLogin']['PhanQuyen'] == 'admin'): ?>
+                                    <div class="header__user__logout"><a href="?mod=admin">Quản lý danh mục</a></div>
+                                <?php endif; ?>
                                 <div class="header__user__logout"><a href="?mod=logout">Đăng xuất</a></div>
-
                             </div>
                         </a>
                     <?php else : ?>

@@ -3,25 +3,28 @@
 /**
  *  Hàm kết nối dữ liệu
  */
-function db_connect()
+function db_connect_PDO()
 {
-    global $conn;
-    $db = func_get_arg(0);
-    $conn = mysqli_connect($db['hostname'], $db['username'], $db['password'], $db['database']);
-    if (!$conn) {
-        die("Kết nối không thành công " . mysqli_connect_error());
-    }
-    //    mysqli_set_charset($conn, "utf8");
+    global $pdo;
 
+    try {
+        $pdo = new PDO('mysql:host=localhost;dbname=nikestore', 'root', '');
+        $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        $error_message = 'Không thể kết nối đến CSDL';
+        $reason = $e->getMessage();
+        echo $reason;
+        exit();
+    }
 }
 
 /**
  * Thực thi chuổi truy vấn
  */
-function db_query($query_string)
+function db_query_PDO($query_string)
 {
-    global $conn;
-    $result = mysqli_query($conn, $query_string);
+    global $pdo;
+    $result = $pdo->query($query_string);
     if (!$result) {
         db_sql_error('Query Error', $query_string);
     }
@@ -56,121 +59,112 @@ function db_query($query_string)
 /**
  * Lấy một bản ghi trong CSDL
  */
-function db_fetch_row($query_string)
+function db_fetch_row_PDO($query_string)
 {
-    global $conn;
     $result = array();
-    $mysqli_result = db_query($query_string);
-    $result = mysqli_fetch_assoc($mysqli_result);
-    mysqli_free_result($mysqli_result);
+    $pdo_result = db_query_PDO($query_string);
+    $result = $pdo_result->fetch();
+    // $pdo_result->closeCursor();
     return $result;
 }
 
 /**
  * Lấy mảng dữ liệu trong CSDL
  */
-function db_fetch_array($query_string)
+function db_fetch_array_PDO($query_string)
 {
-    global $conn;
+    global $pdo;
     $result = array();
-    $mysqli_result = db_query($query_string);
-    while ($row = mysqli_fetch_assoc($mysqli_result)) {
+    $pdo_result = db_query_PDO($query_string);
+    while ($row = $pdo_result->fetch()) {
         $result[] = $row;
     }
-    mysqli_free_result($mysqli_result);
+    // $pdo_result->closeCursor();
     return $result;
 }
 
 /**
  * Lấy số bản ghi
  */
-function db_num_rows($query_string)
+function db_num_rows_PDO($query_string)
 {
-    global $conn;
-    $mysqli_result = db_query($query_string);
-    return mysqli_num_rows($mysqli_result);
+    global $pdo;
+    $mysqli_result = db_query_PDO($query_string);
+    return $mysqli_result->fetchColumn();
 }
 
 /**
  * Thêm bản ghi
  */
-function db_insert($table, $data)
+function db_insert_PDO($table, $data)
 {
-    global $conn;
+    global $pdo;
     $fields = "(" . implode(", ", array_keys($data)) . ")";
     $values = "";
+    $valuesPDO = [];
     foreach ($data as $field => $value) {
         if ($value === NULL)
             $values .= "NULL, ";
         else
-            $values .= "'" . escape_string($value) . "', ";
+            $values .= "" . '?' . ", ";
+        array_push($valuesPDO, $value);
     }
+
     $values = substr($values, 0, -2);
-    db_query("
-            INSERT INTO $table $fields
-            VALUES($values)
-        ");
-    return mysqli_insert_id($conn);
+    $query = "INSERT INTO $table $fields VALUES ($values)";
+    $pdo->prepare($query)->execute($valuesPDO);
+    return $pdo->lastInsertId();
 }
 
 /**
  * Cập nhật dữ liệu
  */
-function db_update($table, $data, $where)
+function db_update_PDO($table, $data, $idStringName, $id)
 {
-    global $conn;
-    $sql = "";
+    global $pdo;
+    $fields = "";
+    $fieldsPDO = [];
     foreach ($data as $field => $value) {
         if ($value === NULL)
-            $sql .= "$field=NULL, ";
+            $fields .= "$field=NULL, ";
         else
-            $sql .= "$field='" . escape_string($value) . "', ";
+            $fields .= "$field='" . '?' . "', ";
+            array_push($fieldsPDO, $value);
     }
-    $sql = substr($sql, 0, -2);
-    db_query("
-            UPDATE $table
-            SET $sql
-            WHERE $where
-   ");
-    return mysqli_affected_rows($conn);
+
+    array_push($fieldsPDO, $id);
+    $query = "UPDATE $table SET $fields WHERE $idStringName=?";
+    $pdo->prepare($query)->execute($fieldsPDO);
+    return $pdo->lastInsertId();
 }
 
 /**
  * Xóa bản ghi
  */
-function db_delete($table, $where)
+function db_delete_PDO($table, $where)
 {
-    global $conn;
-    $query_string = "DELETE FROM " . $table . " WHERE $where";
-    db_query($query_string);
-    return mysqli_affected_rows($conn);
-}
-
-/**
- * Loại bỏ các ký tự đặc biệt tránh bị SQLi
- */
-function escape_string($str)
-{
-    global $conn;
-    return mysqli_real_escape_string($conn, $str);
+    global $pdo;
+    $query_string = " DELETE FROM " . $table . " WHERE MaLoaiHang=" . $where . " LIMIT 1 ";
+    $result = db_query_PDO($query_string);
+    return $result->rowCount();
 }
 
 /**
  * Auto Increament Id
  */
-function mysqli_ai_id()
+function mysqli_ai_id_PDO()
 {
-    global $conn;
-    return mysqli_insert_id($conn);
+    global $pdo;
+    return $pdo->lastInsertId();
 }
 
 /**
  * Gọi hàm thủ tục
  */
-function call_procedure($updateInfo)
+function call_procedure_PDO($updateInfo)
 {
-    global $conn;
-    return mysqli_query($conn, $updateInfo);
+    global $pdo;
+    return $pdo->query($updateInfo);
 }
 
 /**

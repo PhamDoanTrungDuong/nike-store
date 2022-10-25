@@ -1,7 +1,7 @@
 "# NikeStore"
 
 <!--
-      index => appload => router 
+      index => appload => router
  -->
 
 <!--
@@ -32,3 +32,15 @@
       [x] profile
 
  -->
+ <!-- Fix PDO
+   [x] home
+   [x] cart
+   [x] detailProduct
+   [x] checkout
+   [x] profile
+   [x] search
+   [x] login
+   [x] signup
+   [x] 404
+   [x] Quản lý danh mục
+  -->

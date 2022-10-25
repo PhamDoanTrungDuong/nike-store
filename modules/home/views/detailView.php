@@ -3,7 +3,7 @@ get_header();
 ?>
 
 <?php
-while ($item = mysqli_fetch_array($data['detail'])) {
+while ($item = ($data['detail'])->fetch()) {
 ?>
     <section class="main-details-products">
         <div class="container">

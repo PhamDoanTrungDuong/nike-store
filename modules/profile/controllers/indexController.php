@@ -23,6 +23,7 @@ function indexAction()
 function updateAction()
 {
     if (isset($_POST['btn_update'])) {
+        // show_array($_POST)
         update_profile();
 
         $_SESSION['updateProfileStatusMessage'] = "Cập nhật thông tin thành công!";

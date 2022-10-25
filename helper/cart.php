@@ -49,6 +49,6 @@ function get_total_cart()
  */
 
 function get_product_by_id($id){
-    $product = db_fetch_row("SELECT *FROM hanghoa WHERE MSHH = $id");
+    $product = db_fetch_row_PDO("SELECT *FROM hanghoa WHERE MSHH = $id");
     return $product;
 }

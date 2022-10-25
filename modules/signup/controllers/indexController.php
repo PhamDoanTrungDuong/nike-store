@@ -48,7 +48,7 @@ function indexAction()
         }
         if (empty($error)) {
             if (!checkUserExits($Email)) {
-                $result = db_insert('khachhang', array(
+                $result = db_insert_PDO('khachhang', array(
                     'HoTenKH' => $HoTenKH,
                     'DiaChi' => $DiaChi,
                     'SoDienThoai' => $phone,
@@ -59,7 +59,7 @@ function indexAction()
                 if ($result) {
                     $_SESSION['signupStatusMessage'] = "Đăng ký thành công!";
                     $_SESSION['signupStatusCode'] = "success";
-                    redirect("?page=login");
+                    redirect("?mod=login");
                 } else {
                     $_SESSION['signupStatusMessage'] = "Đăng ký thất bại!";
                     $_SESSION['signupStatusCode'] = "error";

@@ -63,7 +63,6 @@ function addAction()
     if (isset($_GET['id'])) {
         $id = (int)$_GET['id'];
         $item = get_product_by_id($id);     // đưa sản phẩm giỏ hàng theo Id sản phẩm
-
         if (!isset($_SESSION['carts'])) {   // if chưa có giỏ hàng thì tạo mới
             $_SESSION['carts']['buy'][$id] = $item;
             $_SESSION['carts']['buy'][$id]['SoLuong'] = 1;

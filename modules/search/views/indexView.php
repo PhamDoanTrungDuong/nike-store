@@ -13,8 +13,8 @@
           /**
            * Kiểm tra nếu tồn tại sản phẩm
            */
-          if (db_fetch_array($sql)) {
-               $data = db_fetch_array($sql);
+          if (db_fetch_array_PDO($sql)) {
+               $data = db_fetch_array_PDO($sql);
           }
      }
 ?>

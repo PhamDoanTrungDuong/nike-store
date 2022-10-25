@@ -1,6 +1,6 @@
 <?php
 /**
- * Xóa sản phẩm trong giỏ hàng theo Id
+ * Xóa sản phẩm trong giỏ hàng theo tham số Id
  */
 function delete_cart($id)
 {

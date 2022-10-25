@@ -1,6 +1,6 @@
 <?php
-    get_header();
-    show_array($data)
+get_header();
+// show_array($data)
 ?>
 <div class="main-content-products">
 
@@ -86,5 +86,5 @@
 
 
 <?php
-     get_footer();
+get_footer();
 ?>
