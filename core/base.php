@@ -117,8 +117,8 @@ function load_view($name, $data_send = array()) {
         *)
         *   Tạo vòng lặp foreach gán nhãn của $data thành $$data để sử dụng trong View.php mà không cần phải truy xuất thông qua mảng $data[], mà truy xuất thăng vào biến VD: $dondathang, $currentDate thay vì $data['dondathang'], $data['currentDate']
         *
-        * foreach ($data as $key_data => $v_data) { // data as $currentDate => $(:data:)
-        *         $$key_data = $v_data;             // $($currentDate) => $(:data:)
+        * foreach ($data as $key_data => $v_data) { // data as $key_data => $(:data:)
+        *         $$key_data = $v_data;             // $(currentDate) => $(:data:)
         * }
         */
 
