@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th6 07, 2022 lúc 06:50 AM
+-- Thời gian đã tạo: Th10 04, 2022 lúc 12:06 PM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 7.4.28
 
@@ -25,6 +25,10 @@ DELIMITER $$
 --
 -- Thủ tục
 --
+CREATE DEFINER=`root`@`localhost` PROCEDURE `edit_cate` (IN `maHangHoa` INT(10), IN `ten` VARCHAR(30))   BEGIN
+UPDATE loaihanghoa lh SET lh.TenLoaiHang=ten WHERE lh.MaLoaiHang=maHangHoa;
+END$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `edit_kh` (IN `mskh` INT(10), IN `ten` VARCHAR(30), IN `diachi` VARCHAR(30), IN `sdt` CHAR(11))   BEGIN
 UPDATE khachhang kh SET kh.HoTenKH=ten, kh.DiaChi=diachi ,kh.SoDienThoai=sdt WHERE kh.MSKH=mskh;
 END$$
@@ -49,12 +53,20 @@ CREATE TABLE `chitietdathang` (
 --
 
 INSERT INTO `chitietdathang` (`SoDonDH`, `MSHH`, `SoLuong`, `GiaDatHang`) VALUES
-(40, 2, 2, '40000.00'),
-(40, 7, 1, '156000.00'),
-(40, 41, 2, '156000.00'),
-(41, 3, 1, '265000.00'),
-(42, 2, 1, '40000.00'),
-(43, 1, 2, '164000.00');
+(60, 1, 4, '164000.00'),
+(60, 8, 1, '115000.00'),
+(61, 1, 4, '164000.00'),
+(61, 2, 3, '40000.00'),
+(61, 3, 1, '265000.00'),
+(62, 1, 1, '164000.00'),
+(63, 3, 5, '265000.00'),
+(63, 5, 1, '207000.00'),
+(64, 4, 1, '40000.00'),
+(65, 3, 1, '265000.00'),
+(66, 1, 1, '164000.00'),
+(66, 2, 1, '40000.00'),
+(66, 7, 1, '156000.00'),
+(67, 3, 1, '265000.00');
 
 -- --------------------------------------------------------
 
@@ -75,10 +87,14 @@ CREATE TABLE `dondathang` (
 --
 
 INSERT INTO `dondathang` (`SoDonDH`, `MSKH`, `DiaChi`, `TongTien`, `NgayDH`) VALUES
-(40, 3, '321awd', '548000', '2022-06-07 03:57:58'),
-(41, 3, 'a13-13', '265000', '2022-06-07 04:01:36'),
-(42, 3, '32', '40000', '2022-06-07 04:07:03'),
-(43, 3, '123', '328000', '2022-06-07 04:14:50');
+(60, 3, 'test 2', '771000', '2022-10-24 14:24:27'),
+(61, 3, 'ádadaqw', '1041000', '2022-10-24 18:27:08'),
+(62, 3, 'SqsQS', '164000', '2022-10-24 18:29:39'),
+(63, 3, 'AAAAAAA', '1532000', '2022-10-24 18:30:11'),
+(64, 3, 'ABC', '40000', '2022-10-24 18:32:15'),
+(65, 15, '3123123', '265000', '2022-10-24 18:34:58'),
+(66, 3, 'abc', '360000', '2022-10-25 03:29:09'),
+(67, 3, 'snv', '265000', '2022-10-30 08:39:11');
 
 -- --------------------------------------------------------
 
@@ -155,25 +171,20 @@ CREATE TABLE `khachhang` (
   `DiaChi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `SoDienThoai` char(15) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `PhanQuyen` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Đang đổ dữ liệu cho bảng `khachhang`
 --
 
-INSERT INTO `khachhang` (`MSKH`, `HoTenKH`, `DiaChi`, `SoDienThoai`, `Email`, `password`) VALUES
-(1, 'Lê Thành Đạt', 'KTX Đại học Cần Thơ', '0916671369', 'datb1910205@student.ctu.edu.vn', 'f33d26ca9f2ea8a96f45a0170b13ff5c'),
-(2, 'Ngọc Diệp', 'Nguyễn Văn Linh', '0946379177', 'ngocdiep710@gmail.com', 'e942681321811af2566eb0602b0538db'),
-(3, 'Phạm Đoàn Trùng Dương', '79B Lý Tự Trọng, Phường An Phú, Quận Ninh Kiều, Cần Thơ', '0913687498', 'duongb1910202@student.ctu.edu.vn', '0e7517141fb53f21ee439b355b5a1d0a'),
-(4, 'Phạm Trần Như Ý', 'KTX Đại học Cần Thơ', '0912345678', 'yb1903315@student.ctu.edu.vn', 'd8a1ca97fc2076326dc9466ce47723ea'),
-(5, 'Lâm Minh Hải', 'Cà Mau', '0916672332', 'haib1905203@student.ctu.edu.vn', 'be8a6e19c968ff48e71b4e19c7d5ac98'),
-(6, 'Bùi Thi Thanh An', 'Ấp 3, Phường Quyên Cù, Huyện 4 Quảng Trị', '0955537798', 'an1800001@student.edu.vn', 'beee4a1b3c0dd99fc43aa25d72a07e4a'),
-(7, 'Nguyễn Gia Hoàng', '39 Phố Khổng Khánh Lễ, Xã 2, Huyện 2 Cần Thơ', '0755540546', 'hoang1802003@student.edu.vn', '38d88bb6edf3234d854fee4e3a81202e'),
-(8, 'Vũ Hữu Đoàn', '46 Phố Thào Võ Thịnh, Xã 2', '0555558667', 'doan1800056@student.edu.vn', 'cd52fb607416cd59a9d2dfd7b4d7da4b'),
-(9, 'Trần Hoàng Huy', 'Ninh Kiều Cần Thơ', '0755518564', 'huy1902165@student.ctu.edu.vn', '8b44b53ec7370c02f899c97c10198fc7'),
-(10, 'Lê Thành Đạt', 'Cần Thơ', '0916671369', 'thanhledatomon@gmail.com', 'f33d26ca9f2ea8a96f45a0170b13ff5c'),
-(11, 'duong', 'a13-13', '31241231241', 'pdtduong@gmail.com', '0e7517141fb53f21ee439b355b5a1d0a');
+INSERT INTO `khachhang` (`MSKH`, `HoTenKH`, `DiaChi`, `SoDienThoai`, `Email`, `password`, `PhanQuyen`) VALUES
+(3, 'Trùng Dương', '79B Lý Tự Trọng, Phường An Phú', '0916087640', 'duongb1910202@student.ctu.edu.vn', '0e7517141fb53f21ee439b355b5a1d0a', 'admin'),
+(12, 'Nguyễn A', '100C Lý Tự Trọng, Phường An Phú', '0916083123', 'nguyena@gmail.com', '0e7517141fb53f21ee439b355b5a1d0a', NULL),
+(13, 'Nguyễn B', 'Quận Ninh Kiều, Cần Thơ', '0916083123', 'nguyenb@gmail.com', 'db907ac9484346d2b91ed2cf5e9035e5', NULL),
+(14, 'Lê Văn C', 'Quận Ninh Kiều, Cần Thơ', '0283647391', 'vanc@gmail.com', '0e7517141fb53f21ee439b355b5a1d0a', NULL),
+(15, 'Nguyễn Văn A', '100B Lý Tự Trọng, Phường An Phú, Quận Ninh Kiều, Cần Thơ', '3849387465', 'a@gmail.com', '0e7517141fb53f21ee439b355b5a1d0a', NULL);
 
 -- --------------------------------------------------------
 
@@ -245,7 +256,7 @@ ALTER TABLE `loaihanghoa`
 -- AUTO_INCREMENT cho bảng `dondathang`
 --
 ALTER TABLE `dondathang`
-  MODIFY `SoDonDH` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `SoDonDH` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- AUTO_INCREMENT cho bảng `hanghoa`
@@ -257,13 +268,13 @@ ALTER TABLE `hanghoa`
 -- AUTO_INCREMENT cho bảng `khachhang`
 --
 ALTER TABLE `khachhang`
-  MODIFY `MSKH` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `MSKH` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT cho bảng `loaihanghoa`
 --
 ALTER TABLE `loaihanghoa`
-  MODIFY `MaLoaiHang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `MaLoaiHang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
