@@ -26,7 +26,7 @@ $action_name = get_action().'Action';
  * Gọi đến các hàm Action trong controller (VD: indexAction, detailAction) để load các dữ liệu   hiển thị lên website
  * array = [
  *      'contruct',
- *      'Action'
+ *      'nameAction'
  * ]
  */
 call_function(array('construct', $action_name));
