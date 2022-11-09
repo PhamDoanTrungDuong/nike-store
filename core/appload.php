@@ -52,7 +52,7 @@ if (is_array($autoload)) {
  * kết nối database từ config/database.php
  */
 
-db_connect_PDO($db);
+db_connect_PDO();
 
 /**
  * bật session
