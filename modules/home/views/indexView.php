@@ -44,7 +44,7 @@
                                                     <i class="bi bi-heart"></i>
                                                 </button>
                                             </a>
-                                            <a href="?mod=home&action=add&id=<?php echo $product['MSHH'] ?>">
+                                            <a href="?mod=home&action=add&id=<?php echo $item['MSHH'] ?>">
                                                 <button class="btn btn-right btn--primary align-items-center d-flex addCartItemRight">
                                                     <i class="bi bi-handbag"></i>
                                                 </button>
