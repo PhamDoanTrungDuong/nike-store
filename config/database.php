@@ -15,11 +15,11 @@
  * database: Tên database kết nối
  */
 
-$db = array(
-    'hostname' => 'localhost',
-    'username' => 'root',
-    'password' => '',
-    'database' => 'nikestore',
-);
+// $db = array(
+//     'hostname' => 'localhost',
+//     'username' => 'root',
+//     'password' => '',
+//     'database' => 'nikestore',
+// );
 
 

@@ -49,7 +49,7 @@ if (is_array($autoload)) {
 
 
 /**
- * kết nối database từ config/database.php
+ * kết nối database
  */
 
 db_connect_PDO();
