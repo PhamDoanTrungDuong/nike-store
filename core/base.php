@@ -80,7 +80,7 @@ function load($type, $name) {
  * callFunction
  * -----------------------------
  * Gọi đến hàm theo tham số biến
- * base.php gọi hàm call_function để load những thứ cần thiết
+ * router.php gọi hàm call_function để load những thứ cần thiết
  */
 
 function call_function($list_function = array()) {
@@ -97,6 +97,21 @@ function call_function($list_function = array()) {
 /**
  * load ${name}View.php
  */
+/** Load Biến
+* $data = Array (
+*       [dondathang] => Array (
+*           [0] => Array ()
+*           [1] => Array ()
+*           [2] => Array ()
+*       )
+*       [currentDate] => :date:
+*)
+*   Tạo vòng lặp foreach gán nhãn của $data thành $$data để sử dụng trong View.php mà không cần phải truy xuất thông qua mảng $data[], mà truy xuất thăng vào biến VD: $dondathang, $currentDate thay vì $data['dondathang'], $data['currentDate']
+*
+* foreach ($data as $key_data => $v_data) {// data as $key_data => $v_data
+*         $$key_data = $v_data;            // $($key_data) => $v_data <=> $(currentDate) => $v_data
+* }
+*/
 
 function load_view($name, $data_send = array()) {
     global $data;
@@ -106,22 +121,6 @@ function load_view($name, $data_send = array()) {
      */
     $path = MODULESPATH . DIRECTORY_SEPARATOR . get_module() . DIRECTORY_SEPARATOR . 'views' . DIRECTORY_SEPARATOR . $name . 'View.php';
     if (file_exists($path)) {
-        /** Load Biến
-        * $data = Array (
-        *       [dondathang] => Array (
-        *           [0] => Array ()
-        *           [1] => Array ()
-        *           [2] => Array ()
-        *       )
-        *       [currentDate] => :date:
-        *)
-        *   Tạo vòng lặp foreach gán nhãn của $data thành $$data để sử dụng trong View.php mà không cần phải truy xuất thông qua mảng $data[], mà truy xuất thăng vào biến VD: $dondathang, $currentDate thay vì $data['dondathang'], $data['currentDate']
-        *
-        * foreach ($data as $key_data => $v_data) { // data as $key_data => $(:data:)
-        *         $$key_data = $v_data;             // $(currentDate) => $(:data:)
-        * }
-        */
-
         if (is_array($data)) {
             foreach ($data as $key_data => $v_data) {
                 $$key_data = $v_data;

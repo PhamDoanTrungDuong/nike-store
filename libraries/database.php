@@ -32,7 +32,7 @@ function db_query_PDO($query_string)
     return $result;
 }
 /**
- * mysqli_fetch_assoc
+ * PDO::FETCH_ASSOC
  *[Array] => Array
  *(
  *    [MSKH] => 3
@@ -40,7 +40,7 @@ function db_query_PDO($query_string)
  *    ...
  *)
  *-----------------------------------------
- * mysqli_fetch_array
+ * PDO::FETCH_BOTH
  *[userLogin] => Array
  *(
  *    [0] => value
@@ -48,7 +48,7 @@ function db_query_PDO($query_string)
  *    ...
  *)
  *-----------------------------------------
- * mysqli_fetch_row
+ * PDO::FETCH_NUM
  *[userLogin] => Array
  *(
  *    [0] => value
