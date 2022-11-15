@@ -29,8 +29,8 @@ function formAction()
 
 function createAction()
 {
+    global $pdo;
     if (isset($_POST['btn_add'])) {
-        // echo $_POST['btn-login'];
         $error = array();
         if (empty($_POST['tenDanhMuc'])) {
             echo empty($_POST['tenDanhMuc']);
@@ -40,7 +40,9 @@ function createAction()
         }
 
         if (empty($error)) {
-            $result = db_insert_PDO('loaihanghoa', ['TenLoaiHang' => $tenDanhMuc]);
+            // $result = db_insert_PDO('loaihanghoa', ['TenLoaiHang' => $tenDanhMuc]);
+            $result = create_cate($tenDanhMuc);
+
             if($result){
                 redirect("?mod=admin");
                 $_SESSION['updateProfileStatusMessage'] = "Thêm mới danh mục thành công!";

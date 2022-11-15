@@ -22,19 +22,21 @@ function indexAction()
         /**
          * Thực hiện thêm đơn hàng vào database
          */
-        $result_dondathang = db_insert_PDO('dondathang', ['MSKH' => $MSKH, 'DiaChi' => $DiaChi, 'TongTien' => $TongTien]);
+        // $result_dondathang = db_insert_PDO('dondathang', ['MSKH' => $MSKH, 'DiaChi' => $DiaChi, 'TongTien' => $TongTien]);
+        $result_dondathang = create_order($MSKH, $DiaChi, $TongTien);
 
         if ($result_dondathang) {
             /**
-             * AutoIncreament
+             * Lấy Id của hàng thuộc 1 bảng vừa mới được thêm vào DB
              */
-            $SoDonDH = mysqli_ai_id_PDO();
-            // echo $SoDonDH;
+            $SoDonDH = mysqli_last_id_PDO();
+
             /**
              * Thêm chi tiết đơn hàng
              */
             foreach ($_SESSION['carts']['buy'] as $value) {
-                db_insert_PDO('chitietdathang', ['SoDonDH' => $SoDonDH, 'MSHH' => $value['MSHH'], 'SoLuong' => $value['SoLuong'], 'GiaDatHang' => $value['Gia']]);
+                // db_insert_PDO('chitietdathang', ['SoDonDH' => $SoDonDH, 'MSHH' => $value['MSHH'], 'SoLuong' => $value['SoLuong'], 'GiaDatHang' => $value['Gia']]);
+                create_order_detail($SoDonDH, $value['MSHH'], $value['SoLuong'], $value['Gia']);
             }
             /**
              * Xóa giỏ hàng sau khi thanh toán

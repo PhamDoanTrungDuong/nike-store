@@ -12,7 +12,7 @@ function get_product_type(){
  * Lấy danh sách sản phẩm theo Loại
  */
 function get_list_product_byId($id){
-    $list_product = db_fetch_array_PDO("SELECT *FROM hanghoa h join loaihanghoa l on h.MaLoaiHang = l.MaLoaiHang WHERE h.MALOAIHANG = '$id'");
+    $list_product = db_fetch_array_PDO("SELECT * FROM hanghoa h join loaihanghoa l on h.MaLoaiHang = l.MaLoaiHang WHERE h.MALOAIHANG = '$id'");
     return $list_product;
 }
 
@@ -20,7 +20,7 @@ function get_list_product_byId($id){
  * Lấy danh sach sản phẩm
  */
 function get_list_product(){
-    $list_product_all = db_fetch_array_PDO("SELECT *FROM hanghoa");
+    $list_product_all = db_fetch_array_PDO("SELECT * FROM hanghoa");
     return $list_product_all;
 }
 
@@ -61,7 +61,7 @@ function totalPages($products){
  * Lấy sản phẩm theo Id
  */
 function get_product_byID($id){
-    $sql_detail = db_query_PDO("SELECT *FROM hanghoa h join loaihanghoa l on h.MaLoaiHang = l.MaLoaiHang WHERE MSHH='$id'");
+    $sql_detail = db_query_PDO("SELECT * FROM hanghoa h join loaihanghoa l on h.MaLoaiHang = l.MaLoaiHang WHERE MSHH='$id'");
     return $sql_detail;
 }
 

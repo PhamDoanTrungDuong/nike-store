@@ -153,7 +153,7 @@ function db_delete_PDO($table, $where)
 /**
  * Auto Increament Id
  */
-function mysqli_ai_id_PDO()
+function mysqli_last_id_PDO()
 {
     global $pdo;
     return $pdo->lastInsertId();

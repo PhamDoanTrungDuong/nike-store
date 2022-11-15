@@ -48,13 +48,15 @@ function indexAction()
         }
         if (empty($error)) {
             if (!checkUserExits($Email)) {
-                $result = db_insert_PDO('khachhang', array(
-                    'HoTenKH' => $HoTenKH,
-                    'DiaChi' => $DiaChi,
-                    'SoDienThoai' => $phone,
-                    'Email' => $Email,
-                    'password' => md5($password)
-                ));
+                // $result = db_insert_PDO('khachhang', array(
+                //     'HoTenKH' => $HoTenKH,
+                //     'DiaChi' => $DiaChi,
+                //     'SoDienThoai' => $phone,
+                //     'Email' => $Email,
+                //     'password' => md5($password)
+                // ));
+
+                $result = signUp($HoTenKH, $DiaChi, $phone, $Email, $password);
 
                 if ($result) {
                     $_SESSION['signupStatusMessage'] = "Đăng ký thành công!";

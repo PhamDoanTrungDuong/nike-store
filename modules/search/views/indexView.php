@@ -9,7 +9,7 @@
      $key = trim($key);
      $data = "";
      if (isset($key)) {
-          $sql  = "SELECT * FROM `hanghoa` WHERE TENHH LIKE '%$key%'";
+          $sql  = "SELECT * FROM hanghoa WHERE TENHH LIKE '%$key%'";
           /**
            * Kiểm tra nếu tồn tại sản phẩm
            */
