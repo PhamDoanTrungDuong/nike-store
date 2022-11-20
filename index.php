@@ -60,13 +60,6 @@ define('LAYOUTPATH', APPPATH.DIRECTORY_SEPARATOR.$layout_folder);
 $config_folder= 'config';
 define('CONFIGPATH', APPPATH.DIRECTORY_SEPARATOR.$config_folder);
 
-/*
- * --------------------------------------------------------------------
- * data path (Định nghĩa folder data)
- * --------------------------------------------------------------------
- */
-$data_folder= 'data';
-define('DATAPATH', APPPATH.DIRECTORY_SEPARATOR.$data_folder);
 
 // require core/appload.php
 require COREPATH.DIRECTORY_SEPARATOR.'appload.php';

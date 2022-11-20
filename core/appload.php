@@ -12,11 +12,6 @@ require CONFIGPATH . DIRECTORY_SEPARATOR . 'database.php';
 require CONFIGPATH . DIRECTORY_SEPARATOR . 'config.php';
 
 /**
- * require config/email.php
- */
-require CONFIGPATH . DIRECTORY_SEPARATOR . 'email.php';
-
-/**
  * require config/autoload.php
  */
 require CONFIGPATH . DIRECTORY_SEPARATOR . 'autoload.php';
